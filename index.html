@@ -19,7 +19,6 @@
       background-attachment: fixed;
     }
 
-    /* TEXTURA VISÍVEL (GRAIN) */
     body::before {
       content: "";
       position: fixed;
@@ -41,6 +40,12 @@
       justify-content: center;
       text-align: center;
       z-index: 1;
+    }
+
+    .hero img {
+      max-width: 140px;
+      margin-bottom: 25px;
+      opacity: 0.9;
     }
 
     .hero h1 {
@@ -65,14 +70,12 @@
       z-index: 1;
     }
 
-    /* SEÇÕES */
     .section {
       margin-top: 110px;
       padding-top: 60px;
       position: relative;
     }
 
-    /* LINHA MODERNA DE SEPARAÇÃO */
     .section::before {
       content: "";
       position: absolute;
@@ -93,11 +96,16 @@
       margin-bottom: 25px;
       letter-spacing: 2px;
       text-transform: uppercase;
+      text-align: center;
     }
 
     p {
       font-weight: 300;
       max-width: 720px;
+    }
+
+    .justify {
+      text-align: justify;
     }
 
     a {
@@ -111,7 +119,8 @@
 
     .cover {
       max-width: 280px;
-      margin-top: 20px;
+      margin: 25px auto;
+      display: block;
       border: 1px solid rgba(255,255,255,0.15);
     }
 
@@ -133,6 +142,7 @@
       gap: 30px;
       align-items: flex-start;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .profile img {
@@ -146,6 +156,7 @@
       border-top: 1px solid rgba(255,255,255,0.15);
       font-size: 0.85rem;
       color: #999;
+      text-align: center;
     }
   </style>
 </head>
@@ -155,6 +166,8 @@
   <!-- HEADER -->
   <header class="hero">
     <div>
+      <!-- IMAGEM ACIMA DO NOME -->
+      <img src="header-symbol.png" alt="Solivagus symbol">
       <h1>Solivagus</h1>
       <p>Atmospheric Black Metal from the Amazon</p>
     </div>
@@ -164,13 +177,13 @@
 
     <div class="section">
       <h2>About</h2>
-      <p>
+      <p class="justify">
         Solivagus is a solo atmospheric black metal project created by Flávio Dourado,
         vocalist and songwriter from Manaus, Brazil. Blending melancholic melodies,
         harsh vocals, and immersive ambient textures, Solivagus explores themes of
         solitude and existential despair.
       </p>
-      <p>
+      <p class="justify">
         The project seeks to bridge the raw emotion of black metal with the haunting
         beauty of the natural world — a deeply personal reflection about isolation,
         resilience, and transcendence amidst the vastness of the Amazon.
@@ -179,16 +192,19 @@
 
     <div class="section">
       <h2>Latest Release</h2>
-      <p><strong>Tropical Anguish (EP)</strong></p>
+      <p style="text-align:center;"><strong>Tropical Anguish (EP)</strong></p>
+
       <img src="tropical-anguish.PNG" alt="Tropical Anguish cover" class="cover">
 
-      <p>
-        <a href="https://open.spotify.com/album/6kz2CE9hewhq16nlSxoGI3?si=APMsH3zNSLaJeQW6-VIOsw" target="_blank">Spotify</a>
-        ·
-        <a href="https://link.deezer.com/s/320AuikrDuO7qm0zzOAY4" target="_blank">Deezer</a>
-        ·
-        <a href="https://youtube.com/@solivagus-official?si=dwri_WemiuFweEAb" target="_blank">YouTube</a>
-      </p>
+      <p style="text-align:center;">
+  <a href="https://open.spotify.com/album/6kz2CE9hewhq16nlSxoGI3?si=APMsH3zNSLaJeQW6-VIOsw" target="_blank">Spotify</a>
+  ·
+  <a href="https://link.deezer.com/s/320AuikrDuO7qm0zzOAY4" target="_blank">Deezer</a>
+  ·
+  <a href="https://youtube.com/@solivagus-official?si=dwri_WemiuFweEAb" target="_blank">YouTube</a>
+  ·
+  <a href="https://solivagus.bandcamp.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank">Bandcamp</a>
+</p>
 
       <iframe
         src="https://open.spotify.com/embed/album/6kz2CE9hewhq16nlSxoGI3"
@@ -209,7 +225,7 @@
       <h2>The Mind Behind</h2>
       <div class="profile">
         <img src="flavio.JPG" alt="Flávio Dourado">
-        <p>
+        <p class="justify">
           Flávio Dourado, 27 years old, born in Manaus in Northern Brazil,
           is a veteran of the Amazonian extreme metal scene.
           Former vocalist of the thrash/death metal band Carnívoro,
@@ -221,7 +237,7 @@
 
     <div class="section">
       <h2>Contact</h2>
-      <p>
+      <p class="justify">
         For bookings, press inquiries, and collaborations:
         <br><br>
         <strong>Email</strong> —
