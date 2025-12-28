@@ -74,6 +74,14 @@
       margin-top: 110px;
       padding-top: 60px;
       position: relative;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .section::before {
@@ -94,9 +102,12 @@
     h2 {
       font-weight: 500;
       margin-bottom: 25px;
-      letter-spacing: 2px;
+      letter-spacing: 6px;
       text-transform: uppercase;
       text-align: center;
+      text-shadow: 
+        0 0 8px rgba(0,0,0,0.8),
+        0 0 15px rgba(58,95,58,0.3); /* Efeito sombrio com toque verde musgo */
     }
 
     p {
@@ -122,6 +133,20 @@
       margin: 25px auto;
       display: block;
       border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    /* Glow sutil verde apenas nas capas de releases */
+    .release-cover {
+      box-shadow: 
+        0 0 15px rgba(58,95,58,0.25),
+        0 0 30px rgba(58,95,58,0.15);
+      transition: box-shadow 0.4s ease;
+    }
+
+    .release-cover:hover {
+      box-shadow: 
+        0 0 25px rgba(58,95,58,0.4),
+        0 0 50px rgba(58,95,58,0.25);
     }
 
     .video-grid {
@@ -166,7 +191,6 @@
   <!-- HEADER -->
   <header class="hero">
     <div>
-      <!-- IMAGEM ACIMA DO NOME -->
       <img src="header-symbol.PNG" alt="Solivagus symbol">
       <h1>Solivagus</h1>
       <p>Atmospheric Black Metal from the Amazon</p>
@@ -178,7 +202,7 @@
     <div class="section">
       <h2>About</h2>
       <p class="justify">
-        Solivagus is a solo atmospheric black metal project created in 2025 by Flávio Dourado,
+        Solivagus is a solo atmospheric black metal project created by Flávio Dourado,
         vocalist and songwriter from Manaus, Brazil. Blending melancholic melodies,
         harsh vocals, and immersive ambient textures, Solivagus explores themes of
         solitude and existential despair.
@@ -194,17 +218,17 @@
       <h2>Latest Release</h2>
       <p style="text-align:center;"><strong>Tropical Anguish (EP)</strong></p>
 
-      <img src="tropical-anguish.PNG" alt="Tropical Anguish cover" class="cover">
+      <img src="tropical-anguish.PNG" alt="Tropical Anguish cover" class="cover release-cover">
 
       <p style="text-align:center;">
-  <a href="https://open.spotify.com/album/6kz2CE9hewhq16nlSxoGI3?si=APMsH3zNSLaJeQW6-VIOsw" target="_blank">Spotify</a>
-  ·
-  <a href="https://link.deezer.com/s/320AuikrDuO7qm0zzOAY4" target="_blank">Deezer</a>
-  ·
-  <a href="https://youtube.com/@solivagus-official?si=dwri_WemiuFweEAb" target="_blank">YouTube</a>
-  ·
-  <a href="https://solivagus.bandcamp.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank">Bandcamp</a>
-</p>
+        <a href="https://open.spotify.com/album/6kz2CE9hewhq16nlSxoGI3?si=APMsH3zNSLaJeQW6-VIOsw" target="_blank">Spotify</a>
+        ·
+        <a href="https://link.deezer.com/s/320AuikrDuO7qm0zzOAY4" target="_blank">Deezer</a>
+        ·
+        <a href="https://youtube.com/@solivagus-official?si=dwri_WemiuFweEAb" target="_blank">YouTube</a>
+        ·
+        <a href="https://solivagus.bandcamp.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank">Bandcamp</a>
+      </p>
 
       <iframe
         src="https://open.spotify.com/embed/album/6kz2CE9hewhq16nlSxoGI3"
@@ -213,13 +237,12 @@
       </iframe>
     </div>
 
-    <!-- NOVA SEÇÃO COMING SOON -->
     <div class="section">
       <h2>Coming Soon</h2>
       <p style="text-align:center; font-size: 1.2em; margin-bottom: 30px;">
         New Single - Last Gift To The Brook
       </p>
-      <img src="lastgift.PNG" alt="Last Gift To The Brook cover" class="cover">
+      <img src="lastgift.PNG" alt="Last Gift To The Brook cover" class="cover release-cover">
     </div>
 
     <div class="section">
@@ -262,5 +285,22 @@
     </footer>
 
   </div>
+
+  <!-- Script para ativar fade-in ao scroll -->
+  <script>
+    const sections = document.querySelectorAll('.section');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
