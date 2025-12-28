@@ -33,17 +33,25 @@
 
     /* HERO / HEADER com parallax */
     .hero {
-      position: relative;
-      height: 85vh;
-      background:
-        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
-        url("header-bg.PNG") center / cover no-repeat fixed;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      z-index: 1;
-    }
+  position: relative;
+  height: 85vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
+    url("header-bg.PNG") center / cover no-repeat fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Fix para mobile */
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
+    height: 70vh; /* opcional, reduz um pouco a altura em celular */
+  }
+}
 
     .hero img {
       max-width: 140px;
