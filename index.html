@@ -5,13 +5,16 @@
   <title>Solivagus</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Favicon com o símbolo da banda -->
+  <link rel="icon" href="header-symbol.PNG" type="image/png">
+
+  <!-- Google Fonts: Cinzel + Crimson Text -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Crimson Text', serif;
       color: #e6e6e6;
       line-height: 1.7;
       background:
@@ -28,13 +31,13 @@
       z-index: 0;
     }
 
-    /* HERO / HEADER */
+    /* HERO / HEADER com parallax */
     .hero {
       position: relative;
       height: 85vh;
       background:
         linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
-        url("header-bg.PNG") center / cover no-repeat;
+        url("header-bg.PNG") center / cover no-repeat fixed;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -49,7 +52,8 @@
     }
 
     .hero h1 {
-      letter-spacing: 6px;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 8px;
       text-transform: uppercase;
       font-weight: 600;
       font-size: clamp(2.5rem, 6vw, 4.5rem);
@@ -100,18 +104,19 @@
     }
 
     h2 {
-      font-weight: 500;
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
       margin-bottom: 25px;
-      letter-spacing: 6px;
+      letter-spacing: 8px;
       text-transform: uppercase;
       text-align: center;
       text-shadow: 
         0 0 8px rgba(0,0,0,0.8),
-        0 0 15px rgba(58,95,58,0.3); /* Efeito sombrio com toque verde musgo */
+        0 0 15px rgba(58,95,58,0.3);
     }
 
     p {
-      font-weight: 300;
+      font-weight: 400;
       max-width: 720px;
     }
 
@@ -135,7 +140,6 @@
       border: 1px solid rgba(255,255,255,0.15);
     }
 
-    /* Glow sutil verde apenas nas capas de releases */
     .release-cover {
       box-shadow: 
         0 0 15px rgba(58,95,58,0.25),
@@ -182,6 +186,11 @@
       font-size: 0.85rem;
       color: #999;
       text-align: center;
+    }
+
+    /* Estilo do formulário com nova fonte */
+    form input, form textarea, form button {
+      font-family: 'Crimson Text', serif;
     }
   </style>
 </head>
@@ -267,7 +276,7 @@
       </div>
     </div>
 
-        <div class="section">
+    <div class="section">
       <h2>Contact</h2>
       <p class="justify" style="max-width: 600px; margin: 0 auto 40px;">
         For bookings, press inquiries, collaborations or just to get in touch:
@@ -277,22 +286,22 @@
       <form action="https://formspree.io/f/xzdbjezo" method="POST" style="max-width: 600px; margin: 0 auto;">
         <div style="margin-bottom: 20px;">
           <input type="text" name="name" placeholder="Your name" required
-                 style="width: 100%; padding: 12px 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); color: #e6e6e6; font-family: inherit; border-radius: 4px; box-sizing: border-box;">
+                 style="width: 100%; padding: 12px 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); color: #e6e6e6; border-radius: 4px; box-sizing: border-box;">
         </div>
 
         <div style="margin-bottom: 20px;">
           <input type="email" name="_replyto" placeholder="Your e-mail" required
-                 style="width: 100%; padding: 12px 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); color: #e6e6e6; font-family: inherit; border-radius: 4px; box-sizing: border-box;">
+                 style="width: 100%; padding: 12px 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); color: #e6e6e6; border-radius: 4px; box-sizing: border-box;">
         </div>
 
         <div style="margin-bottom: 30px;">
           <textarea name="message" rows="6" placeholder="Your message" required
-                    style="width: 100%; padding: 12px 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); color: #e6e6e6; font-family: inherit; border-radius: 4px; resize: vertical; box-sizing: border-box;"></textarea>
+                    style="width: 100%; padding: 12px 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); color: #e6e6e6; border-radius: 4px; resize: vertical; box-sizing: border-box;"></textarea>
         </div>
 
         <div style="text-align: center;">
           <button type="submit"
-                  style="padding: 12px 40px; background: transparent; border: 1px solid #bfa36f; color: #bfa36f; font-family: inherit; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; cursor: pointer; transition: all 0.4s ease; border-radius: 4px;">
+                  style="padding: 12px 40px; background: transparent; border: 1px solid #bfa36f; color: #bfa36f; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; cursor: pointer; transition: all 0.4s ease; border-radius: 4px;">
             Send Message
           </button>
           <style>
