@@ -5,108 +5,169 @@
   <title>Solivagus</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top, #141414, #050505);
-      color: #e0e0e0;
-      line-height: 1.7;
+      background: linear-gradient(180deg, #0b0b0b 0%, #121212 100%);
+      color: #d6d6d6;
+      line-height: 1.85;
+      position: relative;
+    }
+
+    /* subtle grain texture */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 0;
     }
 
     .container {
-      max-width: 960px;
+      max-width: 900px;
       margin: auto;
-      padding: 60px 24px;
-    }
-
-    h1, h2 {
-      font-family: 'Cinzel', serif;
-      letter-spacing: 3px;
-      text-transform: uppercase;
+      padding: 80px 20px;
+      position: relative;
+      z-index: 1;
     }
 
     h1 {
-      font-size: 2.6rem;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      font-size: 3rem;
       margin-bottom: 10px;
     }
 
     h2 {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 4px;
+      font-size: 1.35rem;
+      margin-bottom: 28px;
+      text-transform: uppercase;
+      color: #e2e2e2;
     }
 
     p {
-      max-width: 820px;
+      max-width: 780px;
+      font-size: 1.02rem;
+      color: #d6d6d6;
     }
 
     a {
       color: #bfa36f;
       text-decoration: none;
+      position: relative;
     }
 
-    a:hover {
-      text-decoration: underline;
+    a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0;
+      height: 1px;
+      background: #bfa36f;
+      transition: width 0.3s ease;
+    }
+
+    a:hover::after {
+      width: 100%;
     }
 
     .section {
-      margin-top: 80px;
+      margin-top: 100px;
     }
 
+    .section:not(:first-of-type)::before {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      margin-bottom: 60px;
+    }
+
+    /* Latest Release */
     .release {
       display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
+      gap: 40px;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .release img {
       width: 280px;
-      border-radius: 6px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.6);
+      border-radius: 8px;
+      filter: contrast(1.05) saturate(0.95);
     }
 
-    .links a {
-      display: inline-block;
-      margin-right: 20px;
-      margin-top: 15px;
-      font-weight: 500;
+    iframe {
+      border-radius: 12px;
+      margin-top: 20px;
     }
 
+    /* Video grid */
     .videos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
     }
 
     .videos iframe {
       width: 100%;
-      height: 200px;
-      border-radius: 6px;
+      aspect-ratio: 16 / 9;
       border: none;
     }
 
+    /* Mind Behind */
     .mind {
       display: flex;
-      flex-wrap: wrap;
       gap: 40px;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .mind img {
-      width: 260px;
-      border-radius: 6px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.7);
+      width: 240px;
+      border-radius: 8px;
+      filter: grayscale(15%) contrast(1.1);
     }
 
     footer {
-      margin-top: 100px;
-      text-align: center;
+      margin-top: 140px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.05);
       font-size: 0.85rem;
-      color: #777;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.1rem;
+      }
+
+      .release,
+      .mind {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .release img,
+      .mind img {
+        width: 100%;
+        max-width: 320px;
+      }
     }
   </style>
 </head>
@@ -117,7 +178,6 @@
     <h1>Solivagus</h1>
     <p><em>Atmospheric Black Metal from the Amazon, Brazil</em></p>
 
-    <!-- ABOUT -->
     <div class="section">
       <h2>About</h2>
       <p>
@@ -133,79 +193,53 @@
       </p>
     </div>
 
-    <!-- LATEST RELEASE -->
     <div class="section">
-      <h2>Latest Release</h2>
-
+      <h2>Current Offering</h2>
       <div class="release">
-        <img src="tropical-anguish.png" alt="Tropical Anguish EP cover">
-
+        <img src="tropical-anguish.png" alt="Tropical Anguish EP Cover">
         <div>
           <p><strong>Tropical Anguish (EP)</strong></p>
 
-          <!-- Spotify Embed -->
-          <iframe
-            style="border-radius:12px"
+          <iframe style="border:none"
             src="https://open.spotify.com/embed/album/6kz2CE9hewhq16nlSxoGI3"
-            width="100%"
-            height="380"
-            frameborder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy">
+            width="100%" height="152"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
           </iframe>
 
-          <div class="links">
-            <a href="https://open.spotify.com/artist/7hCPv2aloKZNzBnLwW99SB?si=b0Y86NoORL6_zcImS6lwJw" target="_blank">Spotify</a>
+          <p>
+            <a href="https://open.spotify.com/artist/7hCPv2aloKZNzBnLwW99SB" target="_blank">Spotify</a> ·
+            <a href="https://youtube.com/@solivagus-official" target="_blank">YouTube</a> ·
             <a href="https://link.deezer.com/s/320AuikrDuO7qm0zzOAY4" target="_blank">Deezer</a>
-            <a href="https://youtube.com/@solivagus-official?si=dwri_WemiuFweEAb" target="_blank">YouTube</a>
-          </div>
+          </p>
         </div>
       </div>
     </div>
 
-    <!-- VIDEOS -->
     <div class="section">
       <h2>Videos</h2>
-
       <div class="videos">
         <iframe src="https://www.youtube.com/embed/eHEfkFk-n1E" allowfullscreen></iframe>
         <iframe src="https://www.youtube.com/embed/T8WnWcRy0no" allowfullscreen></iframe>
       </div>
     </div>
 
-    <!-- INFLUENCES -->
-    <div class="section">
-      <h2>Influences</h2>
-      <p>Summoning · Agalloch · Dissection · Grima · Elderwind</p>
-    </div>
-
-    <!-- THE MIND BEHIND -->
     <div class="section">
       <h2>The Mind Behind</h2>
-
       <div class="mind">
         <img src="flavio.jpg" alt="Flávio Dourado">
-
         <p>
           Flávio Dourado, 27, born in Manaus in Northern Brazil, is a veteran of the
-          extreme metal scene of the Amazon region. Former vocalist of the
-          thrash/death metal band Carnívoro, he is also a writer with two published
-          books.
+          extreme metal scene of the region. Former vocalist of the thrash/death metal
+          band Carnívoro, he is also a writer with two published books.
+          <br><br>
+          Through Solivagus, Flávio channels solitude, existential reflection and the
+          oppressive beauty of the Amazon into a singular artistic vision.
         </p>
       </div>
     </div>
 
-    <!-- CONTACT -->
-    <div class="section">
-      <h2>Contact</h2>
-      <p>
-        Email: <a href="mailto:solivagusofficial@gmail.com">solivagusofficial@gmail.com</a><br>
-        Instagram: <a href="https://instagram.com/solivagus_official" target="_blank">@solivagus_official</a>
-      </p>
-    </div>
-
     <footer>
-      © Solivagus — Independent Atmospheric Black Metal
+      © Solivagus — All rights reserved
     </footer>
 
   </div>
