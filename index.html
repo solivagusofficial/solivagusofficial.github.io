@@ -5,8 +5,10 @@
   <title>Solivagus</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Favicon com o símbolo da banda -->
+  <!-- Favicon otimizado com múltiplos tamanhos -->
   <link rel="icon" href="header-symbol.PNG" type="image/png">
+  <link rel="shortcut icon" href="header-symbol.PNG" type="image/png">
+  <link rel="apple-touch-icon" href="header-symbol.PNG">
 
   <!-- Google Fonts: Cinzel + Crimson Text -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -31,27 +33,19 @@
       z-index: 0;
     }
 
-    /* HERO / HEADER com parallax */
+    /* HERO / HEADER estático (sem parallax) */
     .hero {
-  position: relative;
-  height: 85vh;
-  background:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
-    url("header-bg.PNG") center / cover no-repeat fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  z-index: 1;
-}
-
-/* Fix para mobile */
-@media (max-width: 768px) {
-  .hero {
-    background-attachment: scroll;
-    height: 70vh; /* opcional, reduz um pouco a altura em celular */
-  }
-}
+      position: relative;
+      height: 85vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
+        url("header-bg.PNG") center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 1;
+    }
 
     .hero img {
       max-width: 140px;
