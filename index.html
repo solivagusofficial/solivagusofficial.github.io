@@ -362,6 +362,14 @@
 html {
   scroll-behavior: smooth;
 } 
+    /* Logo na seção About/Bio */
+.section-logo {
+  display: block;
+  max-width: 180px; /* Ajuste o tamanho que quiser */
+  margin: 30px auto 40px; /* Espaço acima e abaixo, centralizado */
+  opacity: 0.9;
+  filter: drop-shadow(0 0 10px rgba(58,95,58,0.3)); /* Glow sutil verde amazônico (opcional) */
+}
   </style>
 </head>
 
@@ -392,8 +400,12 @@ html {
 </nav>
   <div class="container">
 
-    <div class="section" id="about">
-      <h2>About</h2>
+        <div class="section" id="about"> <!-- ou id="bio" se preferir mudar o menu -->
+      <h2>About</h2> <!-- ou <h2>Bio</h2> -->
+
+      <!-- Logo da Solivagus abaixo do título -->
+      <img src="solivaguswhite.PNG" alt="Solivagus logo" class="section-logo">
+
       <p class="justify">
         Solivagus is a solo atmospheric black metal project created in 2025 by Flávio Dourado,
         vocalist and songwriter from Manaus, Brazil. Blending melancholic melodies,
@@ -423,11 +435,15 @@ html {
         <a href="https://solivagus.bandcamp.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank">Bandcamp</a>
       </p>
 
-      <iframe
-        src="https://open.spotify.com/embed/album/6kz2CE9hewhq16nlSxoGI3"
-        height="152"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-      </iframe>
+      <iframe style="border-radius:12px" 
+        src="https://open.spotify.com/embed/album/6kz2CE9hewhq16nlSxoGI3?utm_source=generator&theme=0" 
+        width="100%" 
+        height="552" 
+        frameBorder="0" 
+        allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy">
+</iframe>
     </div>
 
     <div class="section" id="coming-soon">
