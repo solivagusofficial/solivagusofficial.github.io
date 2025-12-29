@@ -581,5 +581,23 @@ splash.addEventListener('click', hideSplash);
     document.querySelector('.nav-menu').classList.toggle('open');
   }
 </script> 
+   <script>
+// Fecha o menu hamburger automaticamente ao clicar em qualquer link
+document.querySelectorAll('.nav-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    const navMenu = document.querySelector('.nav-menu');
+    navMenu.classList.remove('open');
+  });
+});
+</script> 
+     <script>
+    // Fecha o menu ao clicar fora dele
+    document.addEventListener('click', (e) => {
+      const navMenu = document.querySelector('.nav-menu');
+      if (!navMenu.contains(e.target) && navMenu.classList.contains('open')) {
+        navMenu.classList.remove('open');
+      }
+    });
+  </script> 
 </body>
 </html>
