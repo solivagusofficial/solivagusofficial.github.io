@@ -134,14 +134,18 @@
     }
 
     .section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 1px;
-  background:
-    linear-gradient(
-      to right,
-      transparent,
-      rgba(191,163,111,0.4),
-      transparent
-    );
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(191,163,111,0.4),
+    transparent
+  );
 }
 
     h2 {
