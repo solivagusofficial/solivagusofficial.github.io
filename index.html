@@ -58,6 +58,7 @@
     rgba(0,0,0,0.55),
     rgba(0,0,0,0.85)
   );
+  opacity: 0.55; /* estado inicial correto */
   transition: opacity 0.15s linear;
   z-index: 1;
 }
@@ -646,16 +647,19 @@ a:hover::after {
   const hero = document.querySelector('.hero');
   const overlay = document.querySelector('.hero-overlay');
 
-  window.addEventListener('scroll', () => {
+  function updateHeroDarkness() {
     const heroHeight = hero.offsetHeight;
     const scrollY = window.scrollY;
 
-    // Normaliza o scroll entre 0 e 1 dentro do hero
     const progress = Math.min(scrollY / heroHeight, 1);
-
-    // Escurecimento progressivo
     overlay.style.opacity = 0.55 + (progress * 0.45);
-  });
+  }
+
+  // Atualiza no carregamento (IMPORTANTE)
+  window.addEventListener('load', updateHeroDarkness);
+
+  // Atualiza durante o scroll
+  window.addEventListener('scroll', updateHeroDarkness);
 </script>
   <style>
     footer a:hover {
