@@ -449,6 +449,23 @@ a:hover::after {
     max-height: 300px;
   }
 }
+   .ritual-phrase {
+  margin: 90px auto 40px;
+  max-width: 900px;
+  text-align: center;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: rgba(191,163,111,0.75);
+  text-shadow: 0 0 20px rgba(0,0,0,0.9);
+} 
+    @media (max-width: 600px) {
+  .ritual-phrase {
+    padding: 0 20px;
+    letter-spacing: 4px;
+  }
+}
   </style>
 </head>
 
@@ -482,7 +499,9 @@ a:hover::after {
       <a href="#contact">Contact</a>
     </div>
   </nav>
-
+<div class="ritual-phrase">
+  BEHIND THE LEAVES, I ROT ALONE
+</div>
   <div class="container">
 
     <!-- BIO -->
