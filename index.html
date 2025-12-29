@@ -499,8 +499,23 @@ splash.addEventListener('click', hideSplash);
 
     navLinks.forEach(link => {
       link.style.color = link.getAttribute('href') === `#${current}` ? '#f0f0f0' : '#bfa36f';
+   document.querySelectorAll('.nav-menu a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    
+    const targetId = this.getAttribute('href').substring(1); // remove o #
+    const targetElement = document.getElementById(targetId);
+    const navHeight = document.querySelector('.nav-menu').offsetHeight;
+    
+    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - navHeight - 20; // 20px de margem extra
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
     });
   });
-</script>
+}); 
+</script>   
 </body>
 </html>
