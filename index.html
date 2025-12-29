@@ -62,7 +62,7 @@
 
     .hero h1 {
   font-family: 'Cinzel Decorative', serif;
-  font-weight: 900;
+  font-weight: 400;
   letter-spacing: 10px;
   font-size: clamp(2.8rem, 7vw, 5.5rem);
   margin-bottom: 15px;
@@ -74,6 +74,18 @@
       letter-spacing: 1px;
       color: #cfcfcf;
     }
+   .hero-subtitle {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 26px;
+  border: 1px solid rgba(255,255,255,0.25);
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #d0d0d0;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(2px);
+} 
 
     .container {
       max-width: 900px;
@@ -375,7 +387,7 @@
     <div>
       <img src="header-symbol.PNG" alt="Solivagus symbol">
       <h1>Solivagus</h1>
-      <p>Atmospheric Black Metal from the Amazon</p>
+      <p class="hero-subtitle">Atmospheric Black Metal from the Amazon</p>
     </div>
   </header>
 
