@@ -28,13 +28,13 @@
   <meta name="twitter:image" content="https://solivagusofficial.github.io/tropical-anguish.PNG">
 
   <style>
-        body {
+    body {
       margin: 0;
       font-family: 'Crimson Text', serif;
       color: #f0f0f0;
       line-height: 1.7;
       background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)), /* Overlay mais leve */
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)),
         url("amazon-river-bg.PNG") center / cover no-repeat fixed;
       background-attachment: fixed;
     }
@@ -187,7 +187,7 @@
       border: 1px solid rgba(255,255,255,0.15);
       box-shadow: 
         0 0 15px rgba(58,95,58,0.25),
-        0 0 30px rgba(58,95,58,0.15); /* Mesmo glow das capas */
+        0 0 30px rgba(58,95,58,0.15);
       transition: box-shadow 0.4s ease;
     }
 
@@ -231,153 +231,141 @@
       color: #f0f0f0;
       box-shadow: 0 0 25px rgba(58,95,58,0.6);
     }
-/* Splash Screen */
-#splash-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #0b0b0b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  opacity: 1;
-  transition: opacity 1.2s ease-out;
-}
 
-#splash-logo {
-  max-width: 300px;
-  width: 80%;
-  opacity: 0;
-  transform: scale(0.8);
-  animation: splashFadeIn 2s ease-out forwards;
-}
+    /* Splash Screen */
+    #splash-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0b0b0b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 1.2s ease-out;
+    }
 
-@keyframes splashFadeIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  70% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+    #splash-logo {
+      max-width: 300px;
+      width: 80%;
+      opacity: 0;
+      transform: scale(0.8);
+      animation: splashFadeIn 2s ease-out forwards;
+    }
 
-/* Classe para esconder o splash */
-#splash-screen.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-   /* Barra de menu melhorada */
-.nav-menu {
-  position: sticky;
-  top: 0;
-  background: rgba(11, 11, 11, 0.95);
-  padding: 12px 0;
-  text-align: center;
-  z-index: 10;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  transition: background 0.3s ease;
-}
+    @keyframes splashFadeIn {
+      0% { opacity: 0; transform: scale(0.8); }
+      70% { opacity: 1; transform: scale(1.1); }
+      100% { opacity: 1; transform: scale(1); }
+    }
 
-.nav-menu a {
-  color: #bfa36f;
-  text-decoration: none;
-  margin: 0 15px; /* Espaçamento ajustado para menos aglomeração */
-  font-family: 'Cinzel', serif;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-size: 0.85rem; /* Fonte menor para caber melhor */
-  position: relative;
-  transition: color 0.3s ease;
-}
+    #splash-screen.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
 
-.nav-menu a:hover {
-  color: #f0f0f0;
-}
+    /* Barra de menu melhorada */
+    .nav-menu {
+      position: sticky;
+      top: 0;
+      background: rgba(11, 11, 11, 0.95);
+      padding: 12px 0;
+      text-align: center;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      transition: background 0.3s ease;
+    }
 
-/* Separadores entre links (exceto o último) */
-.nav-menu a:not(:last-child)::after {
-  content: "|";
-  color: rgba(255,255,255,0.3);
-  margin-left: 18px;
-}
+    .nav-menu a {
+      color: #bfa36f;
+      text-decoration: none;
+      margin: 0 15px;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
 
-/* Destaque para link ativo */
-.nav-menu a.active {
-  color: #f0f0f0;
-  text-decoration: underline;
-}
+    .nav-menu a:hover {
+      color: #f0f0f0;
+    }
 
-/* Responsivo para mobile: esconde links e mostra hamburger */
-@media (max-width: 768px) {
-  .nav-menu {
-    padding: 10px 0;
-  }
+    .nav-menu a:not(:last-child)::after {
+      content: "|";
+      color: rgba(255,255,255,0.3);
+      margin-left: 18px;
+    }
 
-  .nav-menu .links {
-    display: none; /* Esconde links por padrão em mobile */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: rgba(11, 11, 11, 0.95);
-    flex-direction: column;
-    padding: 20px 0;
-  }
+    .nav-menu a.active {
+      color: #f0f0f0;
+      text-decoration: underline;
+    }
 
-  .nav-menu .links a {
-    display: block;
-    margin: 15px 0;
-    font-size: 1rem;
-  }
+    @media (max-width: 768px) {
+      .nav-menu {
+        padding: 10px 0;
+      }
 
-  .nav-menu .links a:not(:last-child)::after {
-    content: none; /* Remove separadores em vertical */
-  }
+      .nav-menu .links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(11, 11, 11, 0.95);
+        flex-direction: column;
+        padding: 20px 0;
+      }
 
-  /* Hamburger icon */
-  .hamburger {
-    display: block;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: #bfa36f;
-  }
+      .nav-menu .links a {
+        display: block;
+        margin: 15px 0;
+        font-size: 1rem;
+      }
 
-  /* Mostra links ao abrir */
-  .nav-menu.open .links {
-    display: flex;
-  }
-}
+      .nav-menu .links a:not(:last-child)::after {
+        content: none;
+      }
 
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-} 
-   /* Logo na seção About/Bio */
-.section-logo {
-  display: block;
-  max-width: 250px; /* Aumentado */
-  margin: 35px auto 45px; /* Aumentei um pouco a margem para respirar */
-  opacity: 0.9;
-  filter: drop-shadow(0 0 15px rgba(58,95,58,0.4)); /* Glow um pouco mais forte para combinar com o tamanho maior */
-}
+      .hamburger {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #bfa36f;
+      }
+
+      .nav-menu.open .links {
+        display: flex;
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Logo na seção Bio - glow mais forte */
+    .section-logo {
+      display: block;
+      max-width: 250px;
+      margin: 35px auto 45px;
+      opacity: 0.9;
+      filter: drop-shadow(0 0 25px rgba(58,95,58,0.6)); /* Glow mais intenso */
+    }
   </style>
 </head>
 
 <body>
-<!-- Splash Screen com o símbolo -->
-<div id="splash-screen">
-  <img src="header-symbol.PNG" alt="Solivagus symbol" id="splash-logo">
-</div>
+  <!-- Splash Screen com o símbolo -->
+  <div id="splash-screen">
+    <img src="header-symbol.PNG" alt="Solivagus symbol" id="splash-logo">
+  </div>
+
   <!-- HEADER -->
   <header class="hero">
     <div>
@@ -386,24 +374,26 @@ html {
       <p>Atmospheric Black Metal from the Amazon</p>
     </div>
   </header>
-<!-- Barra de navegação fixa -->
-<nav class="nav-menu">
-  <div class="hamburger" onclick="toggleMenu()">☰</div> <!-- Ícone hamburger (use ≡ ou imagem se preferir) -->
-  <div class="links">
-    <a href="#about">About</a>
-    <a href="#latest-release">Latest Release</a>
-    <a href="#coming-soon">Coming Soon</a>
-    <a href="#videos">Videos</a>
-    <a href="#mind-behind">The Mind Behind</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+
+  <!-- Barra de navegação fixa -->
+  <nav class="nav-menu">
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="links">
+      <a href="#bio">Bio</a>
+      <a href="#latest-release">Latest Release</a>
+      <a href="#coming-soon">Coming Soon</a>
+      <a href="#videos">Videos</a>
+      <a href="#mind-behind">The Mind Behind</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
   <div class="container">
 
-        <div class="section" id="about"> <!-- ou id="bio" se preferir mudar o menu -->
-      <h2>About</h2> <!-- ou <h2>Bio</h2> -->
+    <!-- BIO -->
+    <div class="section" id="bio">
+      <h2>Bio</h2>
 
-      <!-- Logo da Solivagus abaixo do título -->
       <img src="solivaguswhite.png" alt="Solivagus logo" class="section-logo">
 
       <p class="justify">
@@ -419,9 +409,13 @@ html {
       </p>
     </div>
 
+    <!-- LATEST RELEASE -->
     <div class="section" id="latest-release">
       <h2>Latest Release</h2>
       <p style="text-align:center;"><strong>Tropical Anguish (EP)</strong></p>
+      <p style="text-align:center; font-size:0.9em; color:#aaa; margin:10px 0 30px;">
+        Released October 22, 2025
+      </p>
 
       <img src="tropical-anguish.PNG" alt="Tropical Anguish cover" class="cover release-cover">
 
@@ -436,31 +430,38 @@ html {
       </p>
 
       <iframe style="border-radius:12px" 
-        src="https://open.spotify.com/embed/album/6kz2CE9hewhq16nlSxoGI3?utm_source=generator&theme=0" 
-        width="100%" 
-        height="552" 
-        frameBorder="0" 
-        allowfullscreen="" 
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-        loading="lazy">
-</iframe>
+              src="https://open.spotify.com/embed/album/6kz2CE9hewhq16nlSxoGI3?utm_source=generator&theme=0" 
+              width="100%" 
+              height="552" 
+              frameBorder="0" 
+              allowfullscreen="" 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy">
+      </iframe>
     </div>
 
+    <!-- COMING SOON -->
     <div class="section" id="coming-soon">
       <h2>Coming Soon</h2>
-      <p style="text-align:center; font-size: 1.2em; margin-bottom: 30px;">
+      <p style="text-align:center; font-size: 1.2em; margin-bottom: 10px;">
         New Single - Last Gift To The Brook
+      </p>
+      <p style="text-align:center; font-size: 0.95em; color:#aaa; margin-bottom: 30px;">
+        First half of 2026
       </p>
       <img src="lastgift.PNG" alt="Last Gift To The Brook cover" class="cover release-cover">
     </div>
 
+    <!-- VIDEOS -->
     <div class="section" id="videos">
       <h2>Videos</h2>
       <div class="video-grid">
         <iframe src="https://www.youtube.com/embed/eHEfkFk-n1E"></iframe>
         <iframe src="https://www.youtube.com/embed/T8WnWcRy0no"></iframe>
       </div>
+    </div>
 
+    <!-- THE MIND BEHIND -->
     <div class="section" id="mind-behind">
       <h2>The Mind Behind</h2>
       <div class="profile">
@@ -475,8 +476,7 @@ html {
       </div>
     </div>
 
-    <!-- [SEÇÃO CONTACT E FOOTER MANTIDOS] -->
-
+    <!-- CONTACT -->
     <div class="section" id="contact">
       <h2>Contact</h2>
       <p class="justify" style="max-width: 600px; margin: 0 auto 40px;">
@@ -514,27 +514,22 @@ html {
       </p>
     </div>
 
+    <!-- FOOTER -->
     <footer>
-  <div style="margin: 40px 0 20px; font-size: 0.95rem;">
-    <a href="https://instagram.com/solivagus_official" target="_blank" style="color: #888; margin: 0 18px; text-decoration: none; transition: color 0.3s;">Instagram</a>
-    <a href="https://solivagus.bandcamp.com" target="_blank" style="color: #888; margin: 0 18px; text-decoration: none; transition: color 0.3s;">Bandcamp</a>
-    <a href="https://open.spotify.com/artist/SEU_ID" target="_blank" style="color: #888; margin: 0 18px; text-decoration: none; transition: color 0.3s;">Spotify</a>
-    <a href="https://youtube.com/@solivagus-official" target="_blank" style="color: #888; margin: 0 18px; text-decoration: none; transition: color 0.3s;">YouTube</a>
-  </div>
-  <div style="font-size: 0.85rem; color: #666;">
-    © 2025 Solivagus — All rights reserved
-  </div>
-</footer>
-
-<style>
-  footer a:hover {
-    color: #bfa36f;
-  }
-</style>
+      <div style="margin: 40px 0 20px; font-size: 0.95rem;">
+        <a href="https://instagram.com/solivagus_official" target="_blank" style="color: #888; margin: 0 18px; text-decoration: none; transition: color 0.3s;">Instagram</a>
+        <a href="https://solivagus.bandcamp.com" target="_blank" style="color: #888; margin: 0 18px; text-decoration: none; transition: color 0.3s;">Bandcamp</a>
+        <a href="https://open.spotify.com/artist/SEU_ID" target="_blank" style="color: #888; margin: 0 18px; text-decoration: none; transition: color 0.3s;">Spotify</a>
+        <a href="https://youtube.com/@solivagus-official" target="_blank" style="color: #888; margin: 0 18px; text-decoration: none; transition: color 0.3s;">YouTube</a>
+      </div>
+      <div style="font-size: 0.85rem; color: #666;">
+        © 2025 Solivagus — All rights reserved
+      </div>
+    </footer>
 
   </div>
 
-  <!-- Script fade-in -->
+  <!-- Scripts -->
   <script>
     const sections = document.querySelectorAll('.section');
     const observer = new IntersectionObserver((entries) => {
@@ -546,80 +541,47 @@ html {
     }, { threshold: 0.1 });
     sections.forEach(section => observer.observe(section));
   </script>
-    <script>
-// Splash Screen - desaparece após 3 segundos ou ao clicar/toque
-const splash = document.getElementById('splash-screen');
 
-function hideSplash() {
-  splash.classList.add('hidden');
-  // Remove completamente do DOM após a transição
-  setTimeout(() => {
-    splash.style.display = 'none';
-  }, 1200);
-}
+  <script>
+    // Splash Screen
+    const splash = document.getElementById('splash-screen');
+    function hideSplash() {
+      splash.classList.add('hidden');
+      setTimeout(() => { splash.style.display = 'none'; }, 1200);
+    }
+    setTimeout(hideSplash, 3000);
+    splash.addEventListener('click', hideSplash);
+  </script>
 
-// Esconde automaticamente após 3 segundos
-setTimeout(hideSplash, 3000);
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-menu').classList.toggle('open');
+    }
+  </script>
 
-// Ou esconde ao clicar/toque (para quem quiser pular)
-splash.addEventListener('click', hideSplash);
-</script>
-    <script>
-  // Destaque do link ativo na barra
-  window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('.section');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 150; // ajuste para altura da barra
-      if (pageYOffset >= sectionTop) {
-        current = section.getAttribute('id');
-      }
+  <script>
+    // Fecha menu ao clicar em link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-menu').classList.remove('open');
+      });
     });
+  </script>
 
-    navLinks.forEach(link => {
-      link.style.color = link.getAttribute('href') === `#${current}` ? '#f0f0f0' : '#bfa36f';
-   document.querySelectorAll('.nav-menu a').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    
-    const targetId = this.getAttribute('href').substring(1); // remove o #
-    const targetElement = document.getElementById(targetId);
-    const navHeight = document.querySelector('.nav-menu').offsetHeight;
-    
-    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-    const offsetPosition = elementPosition - navHeight - 20; // 20px de margem extra
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
-    });
-  });
-}); 
-</script>   
-   <script>
-  function toggleMenu() {
-    document.querySelector('.nav-menu').classList.toggle('open');
-  }
-</script> 
-   <script>
-// Fecha o menu hamburger automaticamente ao clicar em qualquer link
-document.querySelectorAll('.nav-menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    const navMenu = document.querySelector('.nav-menu');
-    navMenu.classList.remove('open');
-  });
-});
-</script> 
-     <script>
-    // Fecha o menu ao clicar fora dele
+  <script>
+    // Fecha menu ao clicar fora
     document.addEventListener('click', (e) => {
       const navMenu = document.querySelector('.nav-menu');
       if (!navMenu.contains(e.target) && navMenu.classList.contains('open')) {
         navMenu.classList.remove('open');
       }
     });
-  </script> 
+  </script>
+
+  <style>
+    footer a:hover {
+      color: #bfa36f;
+    }
+  </style>
 </body>
 </html>
