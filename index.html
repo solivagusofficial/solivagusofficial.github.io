@@ -28,18 +28,18 @@
   <meta name="twitter:image" content="https://solivagusofficial.github.io/tropical-anguish.PNG">
 
   <style>
-    body {
+        body {
       margin: 0;
       font-family: 'Crimson Text', serif;
       color: #f0f0f0;
       line-height: 1.7;
       background:
-        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.95)), /* Overlay escuro para legibilidade */
-        url("amazon-river-bg.PNG") center / cover no-repeat fixed; /* Sua nova imagem do rio */
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)), /* Overlay mais leve */
+        url("amazon-river-bg.jpg") center / cover no-repeat fixed;
       background-attachment: fixed;
     }
 
-    /* Opcional: mantém um noise muito sutil por cima, se quiser textura extra */
+    /* Noise sutil mantido (opcional, mas recomendado para textura "film grain") */
     body::before {
       content: "";
       position: fixed;
@@ -47,7 +47,7 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
       pointer-events: none;
       z-index: 0;
-      opacity: 0.6; /* Mais leve que antes */
+      opacity: 0.7; /* Ainda mais leve */
     }
 
     /* HERO / HEADER estático */
