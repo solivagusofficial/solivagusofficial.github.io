@@ -66,6 +66,18 @@
   letter-spacing: 10px;
   font-size: clamp(2.8rem, 7vw, 5.5rem);
   margin-bottom: 15px;
+
+  /* Gradiente elegante no texto */
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #d8d2c2 45%,
+    #bfa36f 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Sombra para manter leitura sobre fundos complexos */
   text-shadow: 0 0 20px rgba(0,0,0,0.9);
 }
 
@@ -122,19 +134,15 @@
     }
 
     .section::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(
-        to right,
-        transparent,
-        rgba(255,255,255,0.25),
-        transparent
-      );
-    }
+  height: 1px;
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(191,163,111,0.4),
+      transparent
+    );
+}
 
     h2 {
       font-family: 'Cinzel', serif;
