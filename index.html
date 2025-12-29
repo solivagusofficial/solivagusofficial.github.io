@@ -421,6 +421,34 @@ a:hover::after {
       opacity: 0.9;
       filter: drop-shadow(0 0 25px rgba(58,95,58,0.6)); /* Glow mais intenso */
     }
+   .photo-slider {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  padding: 30px 10px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.photo-slider img {
+  max-height: 420px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow:
+    0 0 20px rgba(0,0,0,0.7),
+    0 0 35px rgba(58,95,58,0.2);
+  transition: transform 0.4s ease;
+}
+
+.photo-slider img:hover {
+  transform: scale(1.02);
+} 
+    @media (max-width: 768px) {
+  .photo-slider img {
+    max-height: 300px;
+  }
+}
   </style>
 </head>
 
@@ -541,7 +569,21 @@ a:hover::after {
         </p>
       </div>
     </div>
+<!-- PROMOTIONAL PHOTOS -->
+<div class="section" id="promotional-photos">
+  <h2>Promotional Photos</h2>
 
+  <div class="photo-slider">
+    <img src="promo1.jpg" alt="Solivagus promotional photo">
+    <img src="promo2.jpg" alt="Solivagus promotional photo">
+    <img src="promo3.jpg" alt="Solivagus promotional photo">
+    <img src="promo4.jpg" alt="Solivagus promotional photo">
+  </div>
+
+  <p style="text-align:center; font-size:0.85rem; color:#888; margin-top:20px;">
+    Click or swipe to navigate
+  </p>
+</div>
     <!-- CONTACT -->
     <div class="section" id="contact">
       <h2>Contact</h2>
