@@ -283,31 +283,87 @@
   opacity: 0;
   pointer-events: none;
 }
-   /* Barra de menu */
+   /* Barra de menu melhorada */
 .nav-menu {
   position: sticky;
   top: 0;
   background: rgba(11, 11, 11, 0.95);
-  padding: 15px 0;
+  padding: 12px 0;
   text-align: center;
   z-index: 10;
-  backdrop-filter: blur(10px); /* Efeito glassmorphism sutil */
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: background 0.3s ease;
 }
 
 .nav-menu a {
   color: #bfa36f;
   text-decoration: none;
-  margin: 0 20px;
+  margin: 0 15px; /* Espaçamento ajustado para menos aglomeração */
   font-family: 'Cinzel', serif;
   letter-spacing: 2px;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 0.85rem; /* Fonte menor para caber melhor */
+  position: relative;
   transition: color 0.3s ease;
 }
 
 .nav-menu a:hover {
   color: #f0f0f0;
+}
+
+/* Separadores entre links (exceto o último) */
+.nav-menu a:not(:last-child)::after {
+  content: "|";
+  color: rgba(255,255,255,0.3);
+  margin-left: 18px;
+}
+
+/* Destaque para link ativo */
+.nav-menu a.active {
+  color: #f0f0f0;
+  text-decoration: underline;
+}
+
+/* Responsivo para mobile: esconde links e mostra hamburger */
+@media (max-width: 768px) {
+  .nav-menu {
+    padding: 10px 0;
+  }
+
+  .nav-menu .links {
+    display: none; /* Esconde links por padrão em mobile */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(11, 11, 11, 0.95);
+    flex-direction: column;
+    padding: 20px 0;
+  }
+
+  .nav-menu .links a {
+    display: block;
+    margin: 15px 0;
+    font-size: 1rem;
+  }
+
+  .nav-menu .links a:not(:last-child)::after {
+    content: none; /* Remove separadores em vertical */
+  }
+
+  /* Hamburger icon */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #bfa36f;
+  }
+
+  /* Mostra links ao abrir */
+  .nav-menu.open .links {
+    display: flex;
+  }
 }
 
 /* Smooth scroll */
@@ -332,12 +388,15 @@ html {
   </header>
 <!-- Barra de navegação fixa -->
 <nav class="nav-menu">
-  <a href="#about">About</a>
-  <a href="#latest-release">Latest Release</a>
-  <a href="#coming-soon">Coming Soon</a>
-  <a href="#videos">Videos</a>
-  <a href="#mind-behind">The Mind Behind</a>
-  <a href="#contact">Contact</a>
+  <div class="hamburger" onclick="toggleMenu()">☰</div> <!-- Ícone hamburger (use ≡ ou imagem se preferir) -->
+  <div class="links">
+    <a href="#about">About</a>
+    <a href="#latest-release">Latest Release</a>
+    <a href="#coming-soon">Coming Soon</a>
+    <a href="#videos">Videos</a>
+    <a href="#mind-behind">The Mind Behind</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
   <div class="container">
 
@@ -517,5 +576,10 @@ splash.addEventListener('click', hideSplash);
   });
 }); 
 </script>   
+   <script>
+  function toggleMenu() {
+    document.querySelector('.nav-menu').classList.toggle('open');
+  }
+</script> 
 </body>
 </html>
