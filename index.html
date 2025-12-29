@@ -283,6 +283,37 @@
   opacity: 0;
   pointer-events: none;
 }
+   /* Barra de menu */
+.nav-menu {
+  position: sticky;
+  top: 0;
+  background: rgba(11, 11, 11, 0.95);
+  padding: 15px 0;
+  text-align: center;
+  z-index: 10;
+  backdrop-filter: blur(10px); /* Efeito glassmorphism sutil */
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-menu a {
+  color: #bfa36f;
+  text-decoration: none;
+  margin: 0 20px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #f0f0f0;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+} 
   </style>
 </head>
 
@@ -299,10 +330,18 @@
       <p>Atmospheric Black Metal from the Amazon</p>
     </div>
   </header>
-
+<!-- Barra de navegação fixa -->
+<nav class="nav-menu">
+  <a href="#about">About</a>
+  <a href="#latest-release">Latest Release</a>
+  <a href="#coming-soon">Coming Soon</a>
+  <a href="#videos">Videos</a>
+  <a href="#mind-behind">The Mind Behind</a>
+  <a href="#contact">Contact</a>
+</nav>
   <div class="container">
 
-    <div class="section">
+    <div class="section" id="about">
       <h2>About</h2>
       <p class="justify">
         Solivagus is a solo atmospheric black metal project created in 2025 by Flávio Dourado,
@@ -317,7 +356,7 @@
       </p>
     </div>
 
-    <div class="section">
+    <div class="section" id="latest-release">
       <h2>Latest Release</h2>
       <p style="text-align:center;"><strong>Tropical Anguish (EP)</strong></p>
 
@@ -340,7 +379,7 @@
       </iframe>
     </div>
 
-    <div class="section">
+    <div class="section" id="coming-soon">
       <h2>Coming Soon</h2>
       <p style="text-align:center; font-size: 1.2em; margin-bottom: 30px;">
         New Single - Last Gift To The Brook
@@ -348,14 +387,14 @@
       <img src="lastgift.PNG" alt="Last Gift To The Brook cover" class="cover release-cover">
     </div>
 
-    <div class="section">
+    <div class="section" id="videos">
       <h2>Videos</h2>
       <div class="video-grid">
         <iframe src="https://www.youtube.com/embed/eHEfkFk-n1E"></iframe>
         <iframe src="https://www.youtube.com/embed/T8WnWcRy0no"></iframe>
       </div>
 
-    <div class="section">
+    <div class="section" id="mind-behind">
       <h2>The Mind Behind</h2>
       <div class="profile">
         <img src="flavio.JPG" alt="Flávio Dourado">
@@ -371,7 +410,7 @@
 
     <!-- [SEÇÃO CONTACT E FOOTER MANTIDOS] -->
 
-    <div class="section">
+    <div class="section" id="contact">
       <h2>Contact</h2>
       <p class="justify" style="max-width: 600px; margin: 0 auto 40px;">
         For bookings, press inquiries, collaborations or just to get in touch:
@@ -443,6 +482,25 @@ setTimeout(hideSplash, 3000);
 
 // Ou esconde ao clicar/toque (para quem quiser pular)
 splash.addEventListener('click', hideSplash);
+</script>
+    <script>
+  // Destaque do link ativo na barra
+  window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 150; // ajuste para altura da barra
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.style.color = link.getAttribute('href') === `#${current}` ? '#f0f0f0' : '#bfa36f';
+    });
+  });
 </script>
 </body>
 </html>
