@@ -83,14 +83,17 @@
     }
 
     .section {
-      margin-top: 110px;
-      padding-top: 60px;
+      margin-top: 80px;
+      padding-top: 40px;
       position: relative;
       opacity: 0;
       transform: translateY(40px);
       transition: opacity 1.2s ease-out, transform 1.2s ease-out;
     }
-
+    .section:first-of-type {
+    margin-top: 30px;
+    padding-top: 20px;
+  }
     .section.visible {
       opacity: 1;
       transform: translateY(0);
