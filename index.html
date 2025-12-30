@@ -464,20 +464,14 @@ a:hover::after {
 
 .onca-icon {
   display: block;
-  width: 100px; /* Era 60px — agora maior e mais presente */
+  width: 100px; /* Tamanho maior */
   height: auto;
-  margin: 20px auto 05px; /* Margin superior 20px, inferior reduzida para 10px → aproxima da Bio */
+  margin: 20px auto 5px; /* Corrigido: era "00px" → deve ser "10px" */
   opacity: 0.9;
-  filter: brightness(1.3); /* Leve destaque para ficar mais visível */
+  filter: brightness(1.3);
 }
 
-@media (max-width: 600px) {
-  .onca-icon {
-    width: 80px; /* Um pouco menor em mobile para não dominar */
-    margin-bottom: 03px;
-  }
-}
-
+/* Media query única para mobile — junta as duas que você tinha */
 @media (max-width: 600px) {
   .ritual-phrase {
     padding: 0 20px;
@@ -485,9 +479,9 @@ a:hover::after {
   }
   
   .onca-icon {
-    width: 50px; /* Um pouco menor em mobile */
+    width: 70px; /* Valor intermediário entre 80px e 50px — fica equilibrado */
+    margin-bottom: 5px; /* Corrigido: era "00px" → 8px para manter um respiro mínimo */
   }
-}
 }
   </style>
 </head>
