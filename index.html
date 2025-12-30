@@ -10,7 +10,8 @@
 
   <!-- Google Fonts: Cinzel + Crimson Text -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-
+<!-- Adicione ou substitua o link das fontes -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
   <!-- Meta tags para SEO e compartilhamento bonito -->
   <meta name="description" content="Solivagus - Atmospheric Black Metal from the depths of the Amazon rainforest. Solo project by Flávio Dourado.">
 
@@ -41,81 +42,85 @@
 
     /* HERO / HEADER estático */
     .hero {
-      position: relative;
-      height: 85vh;
-      background: url("header-bg.PNG") center / cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-    }
+  position: relative;
+  height: 85vh;
+  background: url("header-bg.PNG") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.85)
+  );
+  opacity: 0.55; /* estado inicial correto */
+  transition: opacity 0.15s linear;
+  z-index: 1;
+}
 
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.85));
-      opacity: 0.55;
-      transition: opacity 0.15s linear;
-      z-index: 1;
-    }
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+    .hero img {
+  max-width: 180px;
+  margin-bottom: 0px;   /* Era 25px — agora fica bem mais perto */
+  opacity: 0.9;
+  filter: drop-shadow(0 0 15px rgba(58,95,58,0.4));  
+}
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
+    .hero h1 {
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 400;
+  letter-spacing: 10px;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  margin: 5px 0 15px 0;
 
-    .hero-symbol {
-      max-width: 180px;
-      margin-bottom: 10px;
-      opacity: 0.9;
-      filter: drop-shadow(0 0 15px rgba(58,95,58,0.4));
-    }
+  /* Gradiente elegante no texto */
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #d8d2c2 45%,
+    #bfa36f 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
-    /* Logo ilegível (solivaguswhite.png) com gradiente esverdeado e profundidade */
-    .hero-logo {
-      max-width: 500px; /* Ajuste conforme o tamanho da sua logo */
-      margin: 0 auto 20px;
-      filter: 
-        drop-shadow(0 0 30px rgba(0,0,0,0.9))
-        drop-shadow(0 0 20px rgba(58,95,58,0.6));
-      /* Gradiente esverdeado: branco → verde-amazônico escuro */
-      -webkit-filter: brightness(0) saturate(100%) 
-        invert(92%) sepia(12%) saturate(1000%) hue-rotate(60deg) brightness(95%) contrast(90%);
-      filter: brightness(0) saturate(100%) 
-        invert(92%) sepia(12%) saturate(1000%) hue-rotate(60deg) brightness(95%) contrast(90%);
-    }
+  /* Sombra para manter leitura sobre fundos complexos */
+  text-shadow: 0 0 25px rgba(0,0,0,0.95);
+}
 
-    .hero-subtitle {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 26px;
-      border: 1px solid rgba(255,255,255,0.25);
-      letter-spacing: 2px;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      color: #d0d0d0;
-      background: rgba(0,0,0,0.25);
-      backdrop-filter: blur(2px);
+    .hero p {
+      font-weight: 300;
+      letter-spacing: 1px;
+      color: #cfcfcf;
     }
-
+   .hero-subtitle {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 26px;
+  border: 1px solid rgba(255,255,255,0.25);
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #d0d0d0;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(2px);
+} 
     @media (max-width: 600px) {
-      .hero-subtitle {
-        max-width: 90%;
-        letter-spacing: 1.5px;
-        line-height: 1.4;
-        padding: 12px 18px;
-        text-align: center;
-      }
-
-      .hero-symbol {
-        max-width: 140px;
-      }
-
-      .hero-logo {
-        max-width: 380px;
-      }
-    }
+  .hero-subtitle {
+    max-width: 90%;
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+    padding: 12px 18px;
+    text-align: center;
+  }
+}
 
     .container {
       max-width: 900px;
@@ -133,27 +138,30 @@
       transform: translateY(40px);
       transition: opacity 1.2s ease-out, transform 1.2s ease-out;
     }
-
     .section:first-of-type {
-      margin-top: 30px;
-      padding-top: 20px;
-    }
-
+    margin-top: 30px;
+    padding-top: 20px;
+  }
     .section.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
     .section::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(255,255,255,0.25), transparent);
-      pointer-events: none;
-    }
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  pointer-events: none;
+}
 
     h2 {
       font-family: 'Cinzel', serif;
@@ -162,45 +170,320 @@
       letter-spacing: 8px;
       text-transform: uppercase;
       text-align: center;
-      text-shadow: 0 0 8px rgba(0,0,0,0.8), 0 0 15px rgba(58,95,58,0.3);
+      text-shadow: 
+        0 0 8px rgba(0,0,0,0.8),
+        0 0 15px rgba(58,95,58,0.3);
     }
 
-    /* ... resto do CSS permanece igual (p, a, cover, etc.) ... */
-
-    .ritual-phrase {
-      margin: 90px auto 40px;
-      max-width: 900px;
-      text-align: center;
-      font-family: 'Cinzel Decorative', serif;
-      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
-      letter-spacing: 6px;
-      text-transform: none;
-      color: #ffffff;
-      text-shadow: 0 0 20px rgba(0,0,0,0.9);
+    p {
+      font-weight: 400;
+      max-width: 720px;
     }
 
-    .onca-icon {
+    .justify {
+      text-align: justify;
+    }
+
+    a {
+  position: relative;
+  color: #bfa36f;
+  text-decoration: none;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: #bfa36f;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+}
+
+    .cover {
+      max-width: 280px;
+      margin: 25px auto;
       display: block;
-      width: 100px;
-      height: auto;
-      margin: 20px auto 5px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .release-cover {
+      box-shadow: 
+        0 0 15px rgba(58,95,58,0.25),
+        0 0 30px rgba(58,95,58,0.15);
+      transition: box-shadow 0.4s ease;
+    }
+
+    .release-cover:hover {
+      box-shadow: 
+        0 0 25px rgba(58,95,58,0.4),
+        0 0 50px rgba(58,95,58,0.25);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 180px;
+      border: none;
+    }
+
+    .profile {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .profile img {
+      max-width: 220px;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 
+        0 0 15px rgba(58,95,58,0.25),
+        0 0 30px rgba(58,95,58,0.15);
+      transition: box-shadow 0.4s ease;
+    }
+
+    .profile img:hover {
+      box-shadow: 
+        0 0 25px rgba(58,95,58,0.4),
+        0 0 50px rgba(58,95,58,0.25);
+    }
+
+    footer {
+      margin-top: 140px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.85rem;
+      color: #999;
+      text-align: center;
+    }
+
+    /* Estilo do formulário */
+    form input, form textarea, form button {
+      font-family: 'Crimson Text', serif;
+    }
+
+    /* Botão com hover mais dramático */
+    form button {
+      padding: 12px 40px;
+      background: transparent;
+      border: 1px solid #bfa36f;
+      color: #bfa36f;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      border-radius: 4px;
+    }
+
+    form button:hover {
+      background: rgba(58,95,58,0.3);
+      border-color: #bfa36f;
+      color: #f0f0f0;
+      box-shadow: 0 0 25px rgba(58,95,58,0.6);
+    }
+
+    /* Splash Screen */
+    #splash-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0b0b0b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 1.2s ease-out;
+    }
+
+    #splash-logo {
+      max-width: 300px;
+      width: 80%;
+      opacity: 0;
+      transform: scale(0.8);
+      animation: splashFadeIn 2s ease-out forwards;
+    }
+
+    @keyframes splashFadeIn {
+      0% { opacity: 0; transform: scale(0.8); }
+      70% { opacity: 1; transform: scale(1.1); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    #splash-screen.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Barra de menu melhorada */
+    .nav-menu {
+      position: sticky;
+      top: 0;
+      background: rgba(11, 11, 11, 0.95);
+      padding: 12px 0;
+      text-align: center;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      transition: background 0.3s ease;
+    }
+
+    .nav-menu a {
+      color: #bfa36f;
+      text-decoration: none;
+      margin: 0 15px;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      color: #f0f0f0;
+    }
+
+    .nav-menu a:not(:last-child)::after {
+      content: "|";
+      color: rgba(255,255,255,0.3);
+      margin-left: 18px;
+    }
+
+    .nav-menu a.active {
+      color: #f0f0f0;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        padding: 10px 0;
+      }
+
+      .nav-menu .links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(11, 11, 11, 0.95);
+        flex-direction: column;
+        padding: 20px 0;
+      }
+
+      .nav-menu .links a {
+        display: block;
+        margin: 15px 0;
+        font-size: 1rem;
+      }
+
+      .nav-menu .links a:not(:last-child)::after {
+        content: none;
+      }
+
+      .hamburger {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #bfa36f;
+      }
+
+      .nav-menu.open .links {
+        display: flex;
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Logo na seção Bio - glow mais forte */
+    .section-logo {
+      display: block;
+      max-width: 250px;
+      margin: 35px auto 45px;
       opacity: 0.9;
-      filter: brightness(1.3);
+      filter: drop-shadow(0 0 25px rgba(58,95,58,0.6)); /* Glow mais intenso */
     }
+   .photo-slider {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  padding: 30px 10px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
 
-    @media (max-width: 600px) {
-      .ritual-phrase {
-        padding: 0 20px;
-        letter-spacing: 7px;
-      }
-      
-      .onca-icon {
-        width: 70px;
-        margin-bottom: 5px;
-      }
-    }
+.photo-slider img {
+  max-height: 420px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow:
+    0 0 20px rgba(0,0,0,0.7),
+    0 0 35px rgba(58,95,58,0.2);
+  transition: transform 0.4s ease;
+}
 
-    /* ... resto do CSS (nav-menu, footer, scripts etc.) permanece o mesmo ... */
+.photo-slider img:hover {
+  transform: scale(1.02);
+} 
+    @media (max-width: 768px) {
+  .photo-slider img {
+    max-height: 300px;
+  }
+}
+   .ritual-phrase {
+  margin: 90px auto 40px;
+  max-width: 900px;
+  text-align: center;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  letter-spacing: 6px;
+  text-transform: none;
+  color: #ffffff; /* Branco puro */
+  text-shadow: 0 0 20px rgba(0,0,0,0.9);
+}
+
+.onca-icon {
+  display: block;
+  width: 100px; /* Tamanho maior */
+  height: auto;
+  margin: 20px auto 5px; /* Corrigido: era "00px" → deve ser "10px" */
+  opacity: 0.9;
+  filter: brightness(1.3);
+}
+
+/* Media query única para mobile — junta as duas que você tinha */
+@media (max-width: 600px) {
+  .ritual-phrase {
+    padding: 0 20px;
+    letter-spacing: 7px;
+  }
+  
+  .onca-icon {
+    width: 70px; /* Valor intermediário entre 80px e 50px — fica equilibrado */
+    margin-bottom: 5px; /* Corrigido: era "00px" → 8px para manter um respiro mínimo */
+  }
+}
   </style>
 </head>
 
@@ -212,37 +495,53 @@
 
   <!-- HEADER -->
   <header class="hero">
-    <div class="hero-overlay"></div>
+  <div class="hero-overlay"></div>
 
-    <div class="hero-content">
-      <!-- Símbolo circular -->
-      <img src="header-symbol.PNG" alt="Solivagus symbol" class="hero-symbol">
-      
-      <!-- Logo ilegível (substitui o texto) -->
-      <img src="solivaguswhite.png" alt="Solivagus" class="hero-logo">
-      
-      <p class="hero-subtitle">Atmospheric Black Metal from the Amazon</p>
-    </div>
-  </header>
-
-  <!-- ... resto do código (menu, ritual-phrase, container, seções etc.) permanece igual ... -->
-
-  <!-- BIO (sem imagem) -->
-  <div class="section" id="bio">
-    <h2>Bio</h2>
-
-    <p class="justify">
-      Solivagus is a solo atmospheric black metal project created in 2025 by Flávio Dourado,
-      vocalist and songwriter from Manaus, Brazil. Blending melancholic melodies,
-      harsh vocals, and immersive ambient textures, Solivagus explores themes of
-      solitude and existential despair.
-    </p>
-    <p class="justify">
-      The project seeks to bridge the raw emotion of black metal with the haunting
-      beauty of the natural world — a deeply personal reflection about isolation,
-      resilience, and transcendence amidst the vastness of the Amazon.
-    </p>
+  <div class="hero-content">
+    <img src="header-symbol.PNG" alt="Solivagus symbol">
+    <h1>Solivagus</h1>
+    <p class="hero-subtitle">Atmospheric Black Metal from the Amazon</p>
   </div>
+</header>
+
+  <!-- Barra de navegação fixa -->
+  <nav class="nav-menu">
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="links">
+      <a href="#bio">Bio</a>
+      <a href="#latest-release">Latest Release</a>
+      <a href="#coming-soon">Coming Soon</a>
+      <a href="#videos">Videos</a>
+      <a href="#mind-behind">The Mind Behind</a>
+      <a href="#promotional-photos">Promotional Photos</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+<div class="ritual-phrase">
+  <p>Behind the leaves, I rot alone</p>
+  <img src="onca-icon.PNG" alt="Onça-pintada icon" class="onca-icon">
+</div>
+  <div class="container">
+
+    <!-- BIO -->
+    <div class="section" id="bio">
+      <h2>Bio</h2>
+
+      <img src="solivaguswhite.png" alt="Solivagus logo" class="section-logo">
+
+      <p class="justify">
+        Solivagus is a solo atmospheric black metal project created in 2025 by Flávio Dourado,
+        vocalist and songwriter from Manaus, Brazil. Blending melancholic melodies,
+        harsh vocals, and immersive ambient textures, Solivagus explores themes of
+        solitude and existential despair.
+      </p>
+      <p class="justify">
+        The project seeks to bridge the raw emotion of black metal with the haunting
+        beauty of the natural world — a deeply personal reflection about isolation,
+        resilience, and transcendence amidst the vastness of the Amazon.
+      </p>
+    </div>
+
     <!-- LATEST RELEASE -->
 <div class="section" id="latest-release">
   <h2>Latest Release</h2>
