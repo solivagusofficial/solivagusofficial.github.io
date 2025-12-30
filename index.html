@@ -458,14 +458,29 @@ a:hover::after {
   font-size: clamp(1.1rem, 2.2vw, 1.6rem);
   letter-spacing: 6px;
   text-transform: none;
-  color: rgba(191,163,111,0.75);
+  color: #ffffff; /* Branco puro */
   text-shadow: 0 0 20px rgba(0,0,0,0.9);
-} 
-    @media (max-width: 600px) {
+}
+
+.onca-icon {
+  display: block;
+  width: 60px; /* Tamanho pequeno e discreto */
+  height: auto;
+  margin: 20px auto 0; /* Espaço acima e centralizado */
+  opacity: 0.8;
+  filter: brightness(1.2); /* Leve destaque */
+}
+
+@media (max-width: 600px) {
   .ritual-phrase {
     padding: 0 20px;
     letter-spacing: 7px;
   }
+  
+  .onca-icon {
+    width: 50px; /* Um pouco menor em mobile */
+  }
+}
 }
   </style>
 </head>
@@ -501,7 +516,8 @@ a:hover::after {
     </div>
   </nav>
 <div class="ritual-phrase">
-  Behind the leaves, I rot alone
+  <p>Behind the leaves, I rot alone</p>
+  <img src="onca-icon.PNG" alt="Onça-pintada icon" class="onca-icon">
 </div>
   <div class="container">
 
