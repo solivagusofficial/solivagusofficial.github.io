@@ -152,11 +152,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px; /* Altura da tira — ajuste conforme sua imagem (ex: 50px a 80px) */
-  background: url('indigenous-pattern.PNG') center / repeat-x;
-  background-size: auto 100%; /* Mantém a altura e repete horizontalmente */
+  height: 40px; /* Altura da divisória — ajuste se quiser mais grossa/fina */
+  background: 
+    linear-gradient(135deg, transparent 50%, rgba(191,163,111,0.4) 50%), /* Dourado sutil */
+    linear-gradient(45deg, transparent 50%, rgba(191,163,111,0.4) 50%);
+  background-size: 20px 20px; /* Tamanho do ziguezague — ajuste para mais fino/grosso */
+  background-position: 0 0, 10px 10px;
   pointer-events: none;
-  opacity: 0.8; /* Ajuste para mais ou menos visibilidade */
+  opacity: 0.8;
 }
 
     h2 {
