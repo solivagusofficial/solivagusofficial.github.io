@@ -484,58 +484,40 @@ a:hover::after {
     margin-bottom: 5px; /* Corrigido: era "00px" → 8px para manter um respiro mínimo */
   }
 }
-  /* Centralização perfeita dos elementos específicos */
-.ritual-phrase {
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-/* Latest Release: título EP, data e links */
+  /* Centralização perfeita de todos os elementos solicitados */
+.ritual-phrase,
 #latest-release > p:first-of-type,      /* "Tropical Anguish (EP)" */
 #latest-release > p:nth-of-type(2),     /* data de lançamento */
-#latest-release > p:nth-of-type(4) {    /* links de streaming */
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-/* Coming Soon: título single e data */
+#latest-release > p:nth-of-type(4),     /* links de streaming */
 #coming-soon > p:first-of-type,         /* "New Single - Last Gift To The Brook" */
-#coming-soon > p:nth-of-type(2) {        /* data "First half of 2026" */
+#coming-soon > p:nth-of-type(2),        /* data "First half of 2026" */
+#promotional-photos > p,                /* "Click or swipe to navigate" */
+#contact > p:last-of-type {             /* "Or write directly..." com email e Instagram */
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 20px;
   box-sizing: border-box;
-}
-
-/* Promotional Photos: texto "Click or swipe to navigate" */
-#promotional-photos > p {
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;
-  box-sizing: border-box;
+  text-align: center; /* Garante centralização do texto dentro do bloco */
 }
 
 /* Bio: texto justificado continua, mas bloco centralizado */
-#bio > p {
+#bio > p.justify {
   max-width: 720px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-/* Mobile: mantém legibilidade */
+/* Mobile: mantém legibilidade e evita corte */
 @media (max-width: 768px) {
   .ritual-phrase,
   #latest-release > p,
   #coming-soon > p,
-  #promotional-photos > p {
+  #promotional-photos > p,
+  #contact > p:last-of-type,
+  #bio > p.justify {
     padding: 0 15px;
   }
 }  
