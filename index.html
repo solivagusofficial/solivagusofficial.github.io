@@ -523,6 +523,19 @@ a:hover::after {
   }
 }
 }  
+.content-wrapper {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 0 15px;
+  }
+}    
   </style>
 </head>
 
@@ -556,9 +569,11 @@ a:hover::after {
       <a href="#contact">Contact</a>
     </div>
   </nav>
-<div class="ritual-phrase">
-  <p>Behind the leaves, I rot alone</p>
-  <img src="onca-icon.PNG" alt="Onça-pintada icon" class="onca-icon">
+<<div class="content-wrapper"> <!-- Novo wrapper -->
+  <div class="ritual-phrase">
+    <p>Behind the leaves, I rot alone</p>
+    <img src="onca-icon.PNG" alt="Onça-pintada icon" class="onca-icon">
+  </div>
 </div>
   <div class="container">
 
@@ -592,6 +607,7 @@ a:hover::after {
   <img src="tropical-anguish.PNG" alt="Tropical Anguish cover" class="cover release-cover">
 
   <!-- Links de streaming -->
+  <div class="content-wrapper"> <!-- Novo wrapper -->
   <p style="text-align:center; margin:30px 0;">
     <a href="https://open.spotify.com/album/6kz2CE9hewhq16nlSxoGI3" target="_blank">Spotify</a>
     ·
@@ -603,6 +619,7 @@ a:hover::after {
     ·
     <a href="https://solivagus.bandcamp.com" target="_blank">Bandcamp</a>
   </p>
+</div>
 
   <!-- Player Spotify (mantido grande) -->
   <iframe style="border-radius:12px" 
