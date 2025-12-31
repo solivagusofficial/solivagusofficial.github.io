@@ -484,21 +484,22 @@ a:hover::after {
     margin-bottom: 5px; /* Corrigido: era "00px" → 8px para manter um respiro mínimo */
   }
 }
-  /* Centralização perfeita de todos os elementos solicitados - versão única e consolidada */
+  /* Centralização perfeita - versão reforçada para garantir no desktop */
 .ritual-phrase,
-#latest-release > p:first-of-type,      /* "Tropical Anguish (EP)" */
-#latest-release > p:nth-of-type(2),     /* data de lançamento */
+#latest-release > p:first-of-type,
+#latest-release > p:nth-of-type(2),
 #latest-release > p:nth-of-type(4),     /* links de streaming */
-#coming-soon > p:first-of-type,         /* "New Single - Last Gift To The Brook" */
-#coming-soon > p:nth-of-type(2),        /* data "First half of 2026" */
-#promotional-photos > p,                /* "Click or swipe to navigate" */
-#contact > p:last-of-type {             /* "Or write directly..." com email e Instagram */
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;
+#coming-soon > p:first-of-type,
+#coming-soon > p:nth-of-type(2),
+#promotional-photos > p,
+#contact > p:last-of-type {
+  width: 100%;
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 20px !important;
   box-sizing: border-box;
-  text-align: center; /* Centraliza o texto interno */
+  text-align: center;
 }
 
 /* Bio: texto justificado continua, mas bloco centralizado */
@@ -510,7 +511,7 @@ a:hover::after {
   box-sizing: border-box;
 }
 
-/* Mobile: mantém legibilidade e evita corte */
+/* Mobile */
 @media (max-width: 768px) {
   .ritual-phrase,
   #latest-release > p,
@@ -520,6 +521,7 @@ a:hover::after {
   #bio > p.justify {
     padding: 0 15px;
   }
+}
 }  
   </style>
 </head>
