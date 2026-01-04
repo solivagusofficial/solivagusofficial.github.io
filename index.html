@@ -67,9 +67,9 @@
   position: relative;
   z-index: 2;
 }
-    .hero img {
+    .hero-symbol {
   max-width: 180px;
-  margin-bottom: 0px;   /* Era 25px — agora fica bem mais perto */
+  margin-bottom: 0;
   opacity: 0.9;
   filter: drop-shadow(0 0 15px rgba(58,95,58,0.4));  
 }
@@ -556,25 +556,26 @@ a:hover::after {
   text-align: center;
 } 
    .hero-logo-musgo {
-  max-width: 80vw; /* Ocupa 80% da largura da tela — fica grande e dominante */
   width: 100%;
+  max-width: 85vw;
   height: auto;
-  margin: 20px auto 30px; /* Espaço acima e abaixo para respirar */
+  margin: 10px auto 25px;
   display: block;
+  filter: drop-shadow(0 0 30px rgba(58,95,58,0.45));
 }
 
 @media (min-width: 769px) {
   .hero-logo-musgo {
-    max-width: 700px; /* Limita em desktop para não ficar gigante demais */
+    max-width: 720px;
   }
 }
 
 @media (max-width: 600px) {
   .hero-logo-musgo {
-    max-width: 90vw; /* Em mobile ocupa quase toda a tela */
-    margin: 15px auto 25px;
+    max-width: 92vw;
+    margin: 10px auto 20px;
   }
-} 
+}
   </style>
 </head>
 
