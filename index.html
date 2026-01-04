@@ -492,9 +492,7 @@ a:hover::after {
   }
 }
   /* Centralização perfeita - versão reforçada para garantir no desktop */
-.latest-release > p:first-of-type,
-#latest-release > p:nth-of-type(2),
-#latest-release > p:nth-of-type(4),     /* links de streaming */
+.latest-release > p:nth-of-type(2),
 #coming-soon > p:first-of-type,
 #coming-soon > p:nth-of-type(2),
 #promotional-photos > p,
@@ -545,6 +543,13 @@ a:hover::after {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: center;
+} 
+ .release-links {
+  max-width: 900px;
+  margin: 30px auto;
   padding: 0 20px;
   box-sizing: border-box;
   text-align: center;
@@ -620,17 +625,17 @@ a:hover::after {
 
   <!-- Links de streaming -->
   <div class="content-wrapper">
-  <p style="text-align:center; margin:30px 0;">
-    <a href="https://open.spotify.com/album/6kz2CE9hewhq16nlSxoGI3" target="_blank">Spotify</a>
-    ·
-    <a href="https://music.apple.com/br/artist/solivagus/1810720617" target="_blank">Apple Music</a>
-    ·
-    <a href="https://link.deezer.com/s/320AuikrDuO7qm0zzOAY4" target="_blank">Deezer</a>
-    ·
-    <a href="https://youtube.com/@solivagus-official" target="_blank">YouTube</a>
-    ·
-    <a href="https://solivagus.bandcamp.com" target="_blank">Bandcamp</a>
-  </p>
+  <p class="release-links">
+  <a href="https://open.spotify.com/album/6kz2CE9hewhq16nlSxoGI3" target="_blank">Spotify</a>
+  ·
+  <a href="https://music.apple.com/br/artist/solivagus/1810720617" target="_blank">Apple Music</a>
+  ·
+  <a href="https://link.deezer.com/s/320AuikrDuO7qm0zzOAY4" target="_blank">Deezer</a>
+  ·
+  <a href="https://youtube.com/@solivagus-official" target="_blank">YouTube</a>
+  ·
+  <a href="https://solivagus.bandcamp.com" target="_blank">Bandcamp</a>
+</p>
 </div>
 
   <!-- Player Spotify (mantido grande) -->
