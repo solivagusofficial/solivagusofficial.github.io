@@ -453,13 +453,15 @@ a:hover::after {
 }
    .ritual-phrase {
   margin: 90px auto 40px;
-  max-width: none;
+  max-width: 900px;
+  padding: 0 20px;
+  box-sizing: border-box;
   text-align: center;
   font-family: 'Cinzel Decorative', serif;
   font-size: clamp(1.1rem, 2.2vw, 1.6rem);
   letter-spacing: 6px;
   text-transform: none;
-  color: #ffffff; /* Branco puro */
+  color: #ffffff;
   text-shadow: 0 0 20px rgba(0,0,0,0.9);
 }
 
@@ -534,6 +536,14 @@ a:hover::after {
     padding: 0 15px;
   }
 }    
+   .release-title {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: center;
+} 
   </style>
 </head>
 
@@ -596,7 +606,7 @@ a:hover::after {
     <!-- LATEST RELEASE -->
 <div class="section" id="latest-release">
   <h2>Latest Release</h2>
-  <p style="text-align:center;"><strong>Tropical Anguish (EP)</strong></p>
+  <p class="release-title"><strong>Tropical Anguish (EP)</strong></p>
   <p style="text-align:center; font-size:0.9em; color:#aaa; margin:10px 0 30px;">
     Released October 22, 2025
   </p>
