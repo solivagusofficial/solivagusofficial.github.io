@@ -522,7 +522,20 @@ a:hover::after {
     padding: 0 15px;
   }
 }
-}     
+}  
+.content-wrapper {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 0 15px;
+  }
+}    
   </style>
 </head>
 
@@ -556,13 +569,13 @@ a:hover::after {
       <a href="#contact">Contact</a>
     </div>
   </nav>
-<div class="container"> <!-- Mude para .container em vez de .content-wrapper -->
+<div class="content-wrapper">
   <div class="ritual-phrase">
     <p>Behind the leaves, I rot alone</p>
     <img src="onca-icon.PNG" alt="Onça-pintada icon" class="onca-icon">
   </div>
 </div>
-    <div class="container">
+  <div class="container">
 
     <!-- BIO -->
     <div class="section" id="bio">
@@ -594,7 +607,7 @@ a:hover::after {
   <img src="tropical-anguish.PNG" alt="Tropical Anguish cover" class="cover release-cover">
 
   <!-- Links de streaming -->
-  <div class="container">
+  <div class="content-wrapper">
   <p style="text-align:center; margin:30px 0;">
     <a href="https://open.spotify.com/album/6kz2CE9hewhq16nlSxoGI3" target="_blank">Spotify</a>
     ·
