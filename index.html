@@ -558,23 +558,26 @@ a:hover::after {
 } 
    .hero-logo-musgo {
   width: 100%;
-  max-width: 85vw;
+  max-width: 85vw; /* fallback geral */
   height: auto;
   margin: 10px auto 25px;
   display: block;
   filter: drop-shadow(0 0 30px rgba(58,95,58,0.45));
 }
 
+/* DESKTOP */
 @media (min-width: 769px) {
   .hero-logo-musgo {
-    max-width: 720px;
+    max-width: 640px;          /* reduz impacto excessivo */
+    margin: 12px auto 20px;    /* evita empurrar legenda */
   }
 }
 
+/* MOBILE */
 @media (max-width: 600px) {
   .hero-logo-musgo {
     max-width: 92vw;
-    margin: 10px auto 20px;
+    margin: 4px auto 12px;     /* tudo mais compacto */
   }
 }
   </style>
