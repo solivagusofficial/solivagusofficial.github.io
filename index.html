@@ -555,6 +555,24 @@ a:hover::after {
   box-sizing: border-box;
   text-align: center;
 } 
+   .hero-logo-musgo {
+  max-width: 600px; /* Ajuste conforme o tamanho da imagem */
+  height: auto;
+  margin: 15px auto 20px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hero-logo-musgo {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-logo-musgo {
+    max-width: 380px;
+  }
+} 
   </style>
 </head>
 
@@ -569,10 +587,14 @@ a:hover::after {
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
-    <img src="header-symbol.PNG" alt="Solivagus symbol">
-    <h1>Solivagus</h1>
-    <p class="hero-subtitle">Atmospheric Black Metal from the Amazon</p>
-  </div>
+  <!-- Símbolo circular (mantido) -->
+  <img src="header-symbol.PNG" alt="Solivagus symbol" class="hero-symbol">
+  
+  <!-- Logo com musgo no lugar do texto -->
+  <img src="solivagus-logo-musgo.png" alt="Solivagus" class="hero-logo-musgo">
+  
+  <p class="hero-subtitle">Atmospheric Black Metal from the Amazon</p>
+</div>
 </header>
 
   <!-- Barra de navegação fixa -->
