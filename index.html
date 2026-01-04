@@ -556,21 +556,23 @@ a:hover::after {
   text-align: center;
 } 
    .hero-logo-musgo {
-  max-width: 600px; /* Ajuste conforme o tamanho da imagem */
+  max-width: 80vw; /* Ocupa 80% da largura da tela — fica grande e dominante */
+  width: 100%;
   height: auto;
-  margin: 15px auto 20px;
+  margin: 20px auto 30px; /* Espaço acima e abaixo para respirar */
   display: block;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   .hero-logo-musgo {
-    max-width: 450px;
+    max-width: 700px; /* Limita em desktop para não ficar gigante demais */
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .hero-logo-musgo {
-    max-width: 380px;
+    max-width: 90vw; /* Em mobile ocupa quase toda a tela */
+    margin: 15px auto 25px;
   }
 } 
   </style>
