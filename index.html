@@ -752,17 +752,16 @@
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
         loading="lazy">
 </iframe>
-      <!-- Player Apple Music do single -->
+      <!-- Player Apple Music do single (compacto) -->
 <div style="text-align:center; margin:40px 0;">
-  <iframe height="152" 
-          width="100%" 
-          title="Media player" 
-          src="https://embed.music.apple.com/us/album/last-gift-to-the-brook-single/1876324279?itscg=30200&itsct=music_box_player&ls=1&app=music&mttnsubad=1876324279&theme=auto" 
-          id="embedPlayer" 
-          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" 
-          allow="autoplay *; encrypted-media *; clipboard-write" 
-          style="border: 0px; border-radius: 12px; width: 100%; height: 450px; max-width: 660px;">
+  <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" 
+          frameborder="0" 
+          height="152"  <!-- altura reduzida: só capa + play -->
+          style="width:100%;max-width:660px;overflow:hidden;border-radius:12px;background:transparent;" 
+          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" 
+          src="https://embed.music.apple.com/us/album/last-gift-to-the-brook-single/1876324279?itscg=30200&itsct=music_box_player&ls=1&app=music&mttnsubad=1876324279&theme=auto">
   </iframe>
+</div>
 </div>
       </div>
 
