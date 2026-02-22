@@ -57,6 +57,13 @@
       "url": "https://open.spotify.com/album/6kz2CE9hewhq16nlSxoGI3",
       "datePublished": "2025-10-22",
       "image": "https://solivagusofficial.github.io/tropical-anguish.PNG"
+    },
+    {
+      "@type": "MusicAlbum",
+      "name": "Last Gift to the Brook (Single)",
+      "url": "LINK_DO_SINGLE_AQUI",  // Coloque o link do Spotify/Apple/Bandcamp do single aqui
+      "datePublished": "2026-02-16",
+      "image": "https://solivagusofficial.github.io/lastgift.PNG"
     }
   ]
 }
@@ -76,112 +83,112 @@
 
     /* HERO / HEADER estático */
     .hero {
-  position: relative;
-  height: 85vh;
-  background: url("header-bg.jpg") center / cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-}
+      position: relative;
+      height: 85vh;
+      background: url("header-bg.jpg") center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
 
-/* Desktop precisa de mais fôlego vertical */
-@media (min-width: 769px) {
-  .hero {
-    height: 100vh;
-  }
-}
+    /* Desktop precisa de mais fôlego vertical */
+    @media (min-width: 769px) {
+      .hero {
+        height: 100vh;
+      }
+    }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0.85)
-  );
-  opacity: 0.55;
-  transition: opacity 0.15s linear;
-  z-index: 1;
-}
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.85)
+      );
+      opacity: 0.55;
+      transition: opacity 0.15s linear;
+      z-index: 1;
+    }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-}
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
 
-/* Símbolo circular */
-.hero-symbol {
-  max-width: 160px;
-  margin-bottom: 1px;
-  opacity: 0.9;
-  filter: drop-shadow(0 0 15px rgba(58,95,58,0.4));
-  position: relative;
-  top: 0;
-}
+    /* Símbolo circular */
+    .hero-symbol {
+      max-width: 160px;
+      margin-bottom: 1px;
+      opacity: 0.9;
+      filter: drop-shadow(0 0 15px rgba(58,95,58,0.4));
+      position: relative;
+      top: 0;
+    }
 
-/* Título principal */
-.hero h1 {
-  font-family: 'Cinzel Decorative', serif;
-  font-weight: 400;
-  letter-spacing: 10px;
-  font-size: clamp(2.8rem, 7vw, 5.5rem);
-  margin: 4px 0 10px 0;
+    /* Título principal */
+    .hero h1 {
+      font-family: 'Cinzel Decorative', serif;
+      font-weight: 400;
+      letter-spacing: 10px;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      margin: 4px 0 10px 0;
 
-  background: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-    #d8d2c2 45%,
-    #bfa36f 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+      background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #d8d2c2 45%,
+        #bfa36f 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
 
-  text-shadow: 0 0 25px rgba(0,0,0,0.95);
-}
+      text-shadow: 0 0 25px rgba(0,0,0,0.95);
+    }
 
-/* Texto base */
-.hero p {
-  font-weight: 300;
-  letter-spacing: 1px;
-  color: #cfcfcf;
-}
+    /* Texto base */
+    .hero p {
+      font-weight: 300;
+      letter-spacing: 1px;
+      color: #cfcfcf;
+    }
 
-/* Legenda inferior */
-.hero-subtitle {
-  display: inline-block;
-  margin-top: 1px;
-  padding: 6px 18px;
-  border: 1px solid rgba(255,255,255,0.25);
-  letter-spacing: 2px;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  color: #d0d0d0;
-  background: rgba(0,0,0,0.25);
-  backdrop-filter: blur(2px);
-}
+    /* Legenda inferior */
+    .hero-subtitle {
+      display: inline-block;
+      margin-top: 1px;
+      padding: 6px 18px;
+      border: 1px solid rgba(255,255,255,0.25);
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: #d0d0d0;
+      background: rgba(0,0,0,0.25);
+      backdrop-filter: blur(2px);
+    }
 
-/* Ajustes MOBILE */
-@media (max-width: 600px) {
-  .hero-symbol {
-    max-width: 140px;
-    margin-bottom: 1px;
-  }
+    /* Ajustes MOBILE */
+    @media (max-width: 600px) {
+      .hero-symbol {
+        max-width: 140px;
+        margin-bottom: 1px;
+      }
 
-  .hero h1 {
-    margin: 4px 0 8px 0;
-  }
+      .hero h1 {
+        margin: 4px 0 8px 0;
+      }
 
-  .hero-subtitle {
-    max-width: 90%;
-    letter-spacing: 1.5px;
-    line-height: 1.4;
-    padding: 10px 16px;
-    margin-top: 2px;
-    text-align: center;
-  }
-}
+      .hero-subtitle {
+        max-width: 90%;
+        letter-spacing: 1.5px;
+        line-height: 1.4;
+        padding: 10px 16px;
+        margin-top: 2px;
+        text-align: center;
+      }
+    }
 
     .container {
       max-width: 900px;
@@ -200,29 +207,29 @@
       transition: opacity 1.2s ease-out, transform 1.2s ease-out;
     }
     .section:first-of-type {
-    margin-top: 30px;
-    padding-top: 20px;
-  }
+      margin-top: 30px;
+      padding-top: 20px;
+    }
     .section.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
     .section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(255, 255, 255, 0.25),
-    transparent
-  );
-  pointer-events: none;
-}
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+      );
+      pointer-events: none;
+    }
 
     h2 {
       font-family: 'Cinzel', serif;
@@ -246,27 +253,27 @@
     }
 
     a {
-  position: relative;
-  color: #bfa36f;
-  text-decoration: none;
-}
+      position: relative;
+      color: #bfa36f;
+      text-decoration: none;
+    }
 
-a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 1px;
-  background: #bfa36f;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
+    a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 1px;
+      background: #bfa36f;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
 
-a:hover::after {
-  transform: scaleX(1);
-}
+    a:hover::after {
+      transform: scaleX(1);
+    }
 
     .cover {
       max-width: 280px;
@@ -485,161 +492,167 @@ a:hover::after {
       filter: drop-shadow(0 0 25px rgba(58,95,58,0.6)); /* Glow mais intenso */
     }
    .photo-slider {
-  display: flex;
-  gap: 30px;
-  overflow-x: auto;
-  padding: 30px 10px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
+      display: flex;
+      gap: 30px;
+      overflow-x: auto;
+      padding: 30px 10px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
 
-.photo-slider img {
-  max-height: 420px;
-  flex-shrink: 0;
-  scroll-snap-align: center;
-  border: 1px solid rgba(255,255,255,0.15);
-  box-shadow:
-    0 0 20px rgba(0,0,0,0.7),
-    0 0 35px rgba(58,95,58,0.2);
-  transition: transform 0.4s ease;
-}
+    .photo-slider img {
+      max-height: 420px;
+      flex-shrink: 0;
+      scroll-snap-align: center;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow:
+        0 0 20px rgba(0,0,0,0.7),
+        0 0 35px rgba(58,95,58,0.2);
+      transition: transform 0.4s ease;
+    }
 
-.photo-slider img:hover {
-  transform: scale(1.02);
-} 
+    .photo-slider img:hover {
+      transform: scale(1.02);
+    } 
     @media (max-width: 768px) {
-  .photo-slider img {
-    max-height: 300px;
-  }
-}
+      .photo-slider img {
+        max-height: 300px;
+      }
+    }
    .ritual-phrase {
-  margin: 90px auto 40px;
-  max-width: 900px;
-  padding: 0 20px;
-  box-sizing: border-box;
-  text-align: center;
-  font-family: 'Cinzel Decorative', serif;
-  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
-  letter-spacing: 6px;
-  text-transform: none;
-  color: #ffffff;
-  text-shadow: 0 0 20px rgba(0,0,0,0.9);
-}
+      margin: 90px auto 40px;
+      max-width: 900px;
+      padding: 0 20px;
+      box-sizing: border-box;
+      text-align: center;
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+      letter-spacing: 6px;
+      text-transform: none;
+      color: #ffffff;
+      text-shadow: 0 0 20px rgba(0,0,0,0.9);
+    }
 
-.ritual-phrase p {
-  max-width: none;
-  margin: 0 auto;
-}
+    .ritual-phrase p {
+      max-width: none;
+      margin: 0 auto;
+    }
 
-.onca-icon {
-  display: block;
-  width: 100px; /* Tamanho maior */
-  height: auto;
-  margin: 20px auto 5px; /* Corrigido: era "00px" → deve ser "10px" */
-  opacity: 0.9;
-  filter: brightness(1.3);
-}
+    .onca-icon {
+      display: block;
+      width: 100px; /* Tamanho maior */
+      height: auto;
+      margin: 20px auto 5px;
+      opacity: 0.9;
+      filter: brightness(1.3);
+    }
 
-/* Media query única para mobile — junta as duas que você tinha */
-@media (max-width: 600px) {
-  .ritual-phrase {
-    padding: 0 20px;
-    letter-spacing: 7px;
-  }
-  
-  .onca-icon {
-    width: 70px; /* Valor intermediário entre 80px e 50px — fica equilibrado */
-    margin-bottom: 5px; /* Corrigido: era "00px" → 8px para manter um respiro mínimo */
-  }
-}
-  /* Centralização perfeita - versão reforçada para garantir no desktop */
-.latest-release > p:first-of-type,
-#latest-release > p:nth-of-type(2),
-#coming-soon > p:first-of-type,
-#coming-soon > p:nth-of-type(2),
-#promotional-photos > p,
-#contact > p:last-of-type {
-  width: 100%;
-  max-width: 900px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding: 0 20px !important;
-  box-sizing: border-box;
-  text-align: center;
-}
+    @media (max-width: 600px) {
+      .ritual-phrase {
+        padding: 0 20px;
+        letter-spacing: 7px;
+      }
+      
+      .onca-icon {
+        width: 70px;
+        margin-bottom: 5px;
+      }
+    }
 
-/* Bio: texto justificado continua, mas bloco centralizado */
-#bio > p.justify {
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
+    /* Centralização perfeita - versão reforçada para garantir no desktop */
+    .ritual-phrase,
+    #latest-release > p:first-of-type,
+    #latest-release > p:nth-of-type(2),
+    #latest-release > p:nth-of-type(4),     /* links de streaming */
+    #coming-soon > p:first-of-type,
+    #coming-soon > p:nth-of-type(2),
+    #promotional-photos > p,
+    #contact > p:last-of-type {
+      width: 100%;
+      max-width: 900px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding: 0 20px !important;
+      box-sizing: border-box;
+      text-align: center;
+    }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .ritual-phrase,
-  #latest-release > p,
-  #coming-soon > p,
-  #promotional-photos > p,
-  #contact > p:last-of-type,
-  #bio > p.justify {
-    padding: 0 15px;
-  }
-}
-.content-wrapper {
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
+    /* Bio: texto justificado continua, mas bloco centralizado */
+    #bio > p.justify {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
 
-@media (max-width: 768px) {
-  .content-wrapper {
-    padding: 0 15px;
-  }
-}    
-   .release-title {
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-  text-align: center;
-} 
- .release-links {
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-  text-align: center;
-} 
-   .hero-logo-musgo {
-  width: 100%;
-  max-width: 80vw;              /* um pouco mais contido por padrão */
-  height: auto;
-  margin: 2px auto 4px;         /* redução forte de espaço vertical */
-  display: block;
-  filter: drop-shadow(0 0 30px rgba(58,95,58,0.45));
-}
+    /* Mobile */
+    @media (max-width: 768px) {
+      .ritual-phrase,
+      #latest-release > p,
+      #coming-soon > p,
+      #promotional-photos > p,
+      #contact > p:last-of-type,
+      #bio > p.justify {
+        padding: 0 15px;
+      }
+    }
 
-/* DESKTOP */
-@media (min-width: 769px) {
-  .hero-logo-musgo {
-    max-width: 580px;           /* reduz altura ocupada */
-    margin: 2px auto 4px;      /* quase colado */
-  }
-}
+    .content-wrapper {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
 
-/* MOBILE */
-@media (max-width: 600px) {
-  .hero-logo-musgo {
-    max-width: 90vw;
-    margin: 1px auto 3px;       /* ultra compacto */
-  }
-}
+    @media (max-width: 768px) {
+      .content-wrapper {
+        padding: 0 15px;
+      }
+    }    
+
+    .release-title {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+      text-align: center;
+    } 
+
+    .release-links {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+      text-align: center;
+    } 
+
+    .hero-logo-musgo {
+      width: 100%;
+      max-width: 80vw;              /* um pouco mais contido por padrão */
+      height: auto;
+      margin: 2px auto 4px;         /* redução forte de espaço vertical */
+      display: block;
+      filter: drop-shadow(0 0 30px rgba(58,95,58,0.45));
+    }
+
+    /* DESKTOP */
+    @media (min-width: 769px) {
+      .hero-logo-musgo {
+        max-width: 580px;           /* reduz altura ocupada */
+        margin: 2px auto 4px;      /* quase colado */
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .hero-logo-musgo {
+        max-width: 90vw;
+        margin: 1px auto 3px;       /* ultra compacto */
+      }
+    }
   </style>
 </head>
 
@@ -651,18 +664,18 @@ a:hover::after {
 
   <!-- HEADER -->
   <header class="hero">
-  <div class="hero-overlay"></div>
+    <div class="hero-overlay"></div>
 
-  <div class="hero-content">
-  <!-- Símbolo circular (mantido) -->
-  <img src="header-symbol.PNG" alt="Solivagus symbol" class="hero-symbol">
-  
-  <!-- Logo com musgo no lugar do texto -->
-  <img src="solivagus-logo-musgo.png" alt="Solivagus" class="hero-logo-musgo">
-  
-  <p class="hero-subtitle">Atmospheric Black Metal from the Amazon</p>
-</div>
-</header>
+    <div class="hero-content">
+      <!-- Símbolo circular (mantido) -->
+      <img src="header-symbol.PNG" alt="Solivagus symbol" class="hero-symbol">
+      
+      <!-- Logo com musgo no lugar do texto -->
+      <img src="solivagus-logo-musgo.png" alt="Solivagus" class="hero-logo-musgo">
+      
+      <p class="hero-subtitle">Atmospheric Black Metal from the Amazon</p>
+    </div>
+  </header>
 
   <!-- Barra de navegação fixa -->
   <nav class="nav-menu">
@@ -677,16 +690,17 @@ a:hover::after {
       <a href="#contact">Contact</a>
     </div>
   </nav>
-<div class="container">
 
-  <div class="ritual-phrase">
-    <p>Behind the leaves, I rot alone</p>
-    <img src="onca-icon.PNG" alt="Onça-pintada icon" class="onca-icon">
-  </div>
+  <div class="container">
 
-  <!-- BIO -->
-  <div class="section" id="bio">
-    <h2>Bio</h2>
+    <div class="ritual-phrase">
+      <p>Behind the leaves, I rot alone</p>
+      <img src="onca-icon.PNG" alt="Onça-pintada icon" class="onca-icon">
+    </div>
+
+    <!-- BIO -->
+    <div class="section" id="bio">
+      <h2>Bio</h2>
 
       <img src="solivaguswhite.png" alt="Solivagus logo" class="section-logo">
 
@@ -703,64 +717,107 @@ a:hover::after {
       </p>
     </div>
 
-    <!-- LATEST RELEASE -->
-<div class="section" id="latest-release">
-  <h2>Latest Release</h2>
-  <p class="release-title"><strong>Tropical Anguish (EP)</strong></p>
-  <p style="text-align:center; font-size:0.9em; color:#aaa; margin:10px 0 30px;">
-    Released October 22, 2025
-  </p>
+    <!-- LATEST RELEASE (agora com Last Gift to the Brook primeiro) -->
+    <div class="section" id="latest-release">
+      <h2>Latest Release</h2>
 
-  <img src="tropical-anguish.PNG" alt="Tropical Anguish cover" class="cover release-cover">
+      <!-- Single Last Gift to the Brook (agora primeiro) -->
+      <p class="release-title"><strong>Last Gift to the Brook (Single)</strong></p>
+      <p style="text-align:center; font-size:0.9em; color:#aaa; margin:10px 0 30px;">
+        Released February 16, 2026
+      </p>
+      <img src="lastgift.PNG" alt="Last Gift To The Brook cover" class="cover release-cover">
 
-  <!-- Links de streaming -->
-  <div class="content-wrapper">
-  <p class="release-links">
-  <a href="https://open.spotify.com/album/6kz2CE9hewhq16nlSxoGI3" target="_blank">Spotify</a>
-  ·
-  <a href="https://music.apple.com/br/artist/solivagus/1810720617" target="_blank">Apple Music</a>
-  ·
-  <a href="https://link.deezer.com/s/320AuikrDuO7qm0zzOAY4" target="_blank">Deezer</a>
-  ·
-  <a href="https://youtube.com/@solivagus-official" target="_blank">YouTube</a>
-  ·
-  <a href="https://solivagus.bandcamp.com" target="_blank">Bandcamp</a>
-</p>
-</div>
+      <!-- Links de streaming do single (adicione o link real quando tiver) -->
+      <div class="content-wrapper">
+        <p class="release-links">
+          <a href="https://open.spotify.com/album/0s5RmlCQBKfGN9xn5t3yj0?si=Nto1hksATj2itCOcjC8ywA" target="_blank">Spotify</a>
+          ·
+          <a href="https://music.apple.com/br/album/last-gift-to-the-brook/1876324279?i=1876324283" target="_blank">Apple Music</a>
+          ·
+          <a href="https://link.deezer.com/s/32w7Y8LZMczXFeqRvrBmk" target="_blank">Deezer</a>
+          ·
+          <a href="https://youtu.be/iMUQd42e2es" target="_blank">YouTube</a>
+          ·
+        </p>
+      </div>
 
-  <!-- Player Spotify (mantido grande) -->
-  <iframe style="border-radius:12px" 
-          src="https://open.spotify.com/embed/album/6kz2CE9hewhq16nlSxoGI3?utm_source=generator&theme=0" 
-          width="100%" 
-          height="552" 
-          frameBorder="0" 
-          allowfullscreen="" 
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-          loading="lazy">
-  </iframe>
+      <!-- Player Spotify do single (adicione o embed real quando tiver) -->
+      <iframe style="border-radius:12px" 
+              src="EMBED_SPOTIFY_DO_SINGLE_AQUI" 
+              width="100%" 
+              height="552" 
+              frameBorder="0" 
+              allowfullscreen="" 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy">
+      </iframe>
 
-  <!-- Player Apple Music -->
-<div style="text-align:center; margin:40px 0;">
-  <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" 
-          frameborder="0" 
-          height="450" 
-          style="width:100%;max-width:660px;overflow:hidden;border-radius:12px;background:transparent;" 
-          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" 
-          src="https://embed.music.apple.com/br/album/tropical-anguish-ep/1846451572">
-  </iframe>
-</div>
-</div>
+      <!-- Player Apple Music do single (adicione o embed real quando tiver) -->
+      <div style="text-align:center; margin:40px 0;">
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" 
+                frameborder="0" 
+                height="450" 
+                style="width:100%;max-width:660px;overflow:hidden;border-radius:12px;background:transparent;" 
+                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" 
+                src="EMBED_APPLE_DO_SINGLE_AQUI">
+        </iframe>
+      </div>
 
-    <!-- COMING SOON -->
+      <!-- EP Tropical Anguish (agora abaixo do single) -->
+      <p class="release-title"><strong>Tropical Anguish (EP)</strong></p>
+      <p style="text-align:center; font-size:0.9em; color:#aaa; margin:10px 0 30px;">
+        Released October 22, 2025
+      </p>
+      <img src="tropical-anguish.PNG" alt="Tropical Anguish cover" class="cover release-cover">
+
+      <!-- Links do EP (mantidos) -->
+      <div class="content-wrapper">
+        <p class="release-links">
+          <a href="https://open.spotify.com/album/6kz2CE9hewhq16nlSxoGI3" target="_blank">Spotify</a>
+          ·
+          <a href="https://music.apple.com/br/artist/solivagus/1810720617" target="_blank">Apple Music</a>
+          ·
+          <a href="https://link.deezer.com/s/320AuikrDuO7qm0zzOAY4" target="_blank">Deezer</a>
+          ·
+          <a href="https://youtube.com/@solivagus-official" target="_blank">YouTube</a>
+          ·
+          <a href="https://solivagus.bandcamp.com" target="_blank">Bandcamp</a>
+        </p>
+      </div>
+
+      <!-- Player Spotify do EP -->
+      <iframe style="border-radius:12px" 
+              src="https://open.spotify.com/embed/album/6kz2CE9hewhq16nlSxoGI3?utm_source=generator&theme=0" 
+              width="100%" 
+              height="552" 
+              frameBorder="0" 
+              allowfullscreen="" 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy">
+      </iframe>
+
+      <!-- Player Apple Music do EP -->
+      <div style="text-align:center; margin:40px 0;">
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" 
+                frameborder="0" 
+                height="450" 
+                style="width:100%;max-width:660px;overflow:hidden;border-radius:12px;background:transparent;" 
+                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" 
+                src="https://embed.music.apple.com/br/album/tropical-anguish-ep/1846451572">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- COMING SOON (agora só com full-length album) -->
     <div class="section" id="coming-soon">
       <h2>Coming Soon</h2>
       <p style="text-align:center; font-size: 1.2em; margin-bottom: 10px;">
-        New Single - Last Gift To The Brook
+        Full-length album “???”
       </p>
       <p style="text-align:center; font-size: 0.95em; color:#aaa; margin-bottom: 30px;">
-        First half of 2026
+        Coming soon this year
       </p>
-      <img src="lastgift.PNG" alt="Last Gift To The Brook cover" class="cover release-cover">
     </div>
 
     <!-- VIDEOS -->
@@ -779,29 +836,29 @@ a:hover::after {
         <img src="flavio.JPG" alt="Flávio Dourado">
         <p class="justify">
           Flávio Dourado, 27 years old, born in Manaus in Northern Brazil,
-          is a veteran of the Amazonian extreme metal scene. He holds a postgraduate degree in Law and serves as a Navy officer.
-          Former vocalist of the thrash/death metal band 
+          is a veteran of the Amazonian extreme metal scene. He holds a postgraduate degree in Law and serves as a Navy officer. Former vocalist of the thrash/death metal band 
 <a href="https://www.metal-archives.com/bands/Carn%C3%ADvoro/3540497579" target="_blank" rel="noopener">
-  Carnívoro </a>, he is also a writer with two published books. Solivagus represents his most introspective and personal artistic expression.
-          He began his musical journey at the age of 14 with a death metal band called Devilish Quasar, which never released any recorded material. His primary influences during this formative period were Max Cavalera (ex-Sepultura) and Frank Mullen (Suffocation). With Carnívoro, he released the album Culto Pagão in 2019 and the double single Prepotente Criador in 2024, before leaving the band in August 2025.
+  Carnívoro </a>, he is also a writer with two published books. Solivagus represents his most introspective and personal artistic expression. He began his musical journey at the age of 14 with a death metal band called Devilish Quasar, which never released any recorded material. His primary influences during this formative period were Max Cavalera (ex-Sepultura) and Frank Mullen (Suffocation). With Carnívoro, he released the album Culto Pagão in 2019 and the double single Prepotente Criador in 2024, before leaving the band in August 2025.
         </p>
       </div>
     </div>
-<!-- PROMOTIONAL PHOTOS -->
-<div class="section" id="promotional-photos">
-  <h2>Promotional Photos</h2>
 
-  <div class="photo-slider">
-    <img src="promo1.JPG" alt="Solivagus promotional photo">
-    <img src="promo2.JPG" alt="Solivagus promotional photo">
-    <img src="promo3.JPG" alt="Solivagus promotional photo">
-    <img src="promo4.JPG" alt="Solivagus promotional photo">
-  </div>
+    <!-- PROMOTIONAL PHOTOS -->
+    <div class="section" id="promotional-photos">
+      <h2>Promotional Photos</h2>
 
-  <p style="text-align:center; font-size:0.85rem; color:#888; margin-top:20px;">
-    Click or swipe to navigate
-  </p>
-</div>
+      <div class="photo-slider">
+        <img src="promo1.JPG" alt="Solivagus promotional photo">
+        <img src="promo2.JPG" alt="Solivagus promotional photo">
+        <img src="promo3.JPG" alt="Solivagus promotional photo">
+        <img src="promo4.JPG" alt="Solivagus promotional photo">
+      </div>
+
+      <p style="text-align:center; font-size:0.85rem; color:#888; margin-top:20px;">
+        Click or swipe to navigate
+      </p>
+    </div>
+
     <!-- CONTACT -->
     <div class="section" id="contact">
       <h2>Contact</h2>
